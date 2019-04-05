@@ -12,20 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Arrays.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5365">
-              <caret line="1507" column="39" selection-start-line="1507" selection-start-column="39" selection-end-line="1507" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Test7.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Test7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            <state relative-caret-position="395">
+              <caret line="13" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -33,11 +24,13 @@
       <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="574" column="19" lean-forward="true" selection-start-line="574" selection-start-column="19" selection-end-line="574" selection-end-column="19" />
+            <state relative-caret-position="-845">
+              <caret line="623" column="12" selection-start-line="623" selection-start-column="12" selection-end-line="623" selection-end-column="12" />
               <folding>
                 <element signature="e#19296#19297#0" expanded="true" />
                 <element signature="e#19379#19380#0" expanded="true" />
+                <element signature="e#24298#24299#0" expanded="true" />
+                <element signature="e#24363#24364#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +39,8 @@
       <file leaf-file-name="Iterator.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Iterator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+            <state relative-caret-position="766">
+              <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -55,7 +48,7 @@
       <file leaf-file-name="Consumer.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/function/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
+            <state relative-caret-position="37">
               <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
             </state>
           </provider>
@@ -64,8 +57,8 @@
       <file leaf-file-name="Collection.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Collection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8246">
-              <caret line="134" column="21" lean-forward="true" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+            <state relative-caret-position="4033">
+              <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -73,8 +66,8 @@
       <file leaf-file-name="TreeSet.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="91" column="17" lean-forward="true" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
+            <state relative-caret-position="2516">
+              <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -86,8 +79,8 @@
               <ID>JAVA</ID>
               <OriginalElement>java.util.TreeSet</OriginalElement>
               <nodes>
-                <node x="561.5" y="192.0">java.util.AbstractCollection</node>
                 <node x="0.0" y="384.0">java.lang.Cloneable</node>
+                <node x="561.5" y="192.0">java.util.AbstractCollection</node>
                 <node x="375.50000000000006" y="288.0">java.util.SortedSet</node>
                 <node x="496.9204545454546" y="96.0">java.util.Collection</node>
                 <node x="548.5" y="288.0">java.util.AbstractSet</node>
@@ -127,17 +120,17 @@
                   <point x="452.00000000000006" y="450.0" />
                   <point x="0.0" y="23.0" />
                 </edge>
-                <edge source="java.util.TreeSet" target="java.util.AbstractSet">
-                  <point x="50.625" y="-23.0" />
-                  <point x="405.62500000000006" y="460.0" />
-                  <point x="631.5" y="460.0" />
-                  <point x="0.0" y="23.0" />
-                </edge>
                 <edge source="java.util.AbstractSet" target="java.util.Set">
                   <point x="-41.5" y="-23.0" />
                   <point x="590.0" y="263.0" />
                   <point x="501.50000000000006" y="263.0" />
                   <point x="24.75" y="23.0" />
+                </edge>
+                <edge source="java.util.TreeSet" target="java.util.AbstractSet">
+                  <point x="50.625" y="-23.0" />
+                  <point x="405.62500000000006" y="460.0" />
+                  <point x="631.5" y="460.0" />
+                  <point x="0.0" y="23.0" />
                 </edge>
                 <edge source="java.util.NavigableSet" target="java.util.SortedSet">
                   <point x="0.0" y="-23.0" />
@@ -158,8 +151,10 @@
                   <point x="0.0" y="23.0" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="-46.0" y="220.0" />
-              <SelectedNodes />
+              <settings layout="Hierarchic Group" zoom="0.5962732919254659" x="392.5" y="263.0" />
+              <SelectedNodes>
+                <node>java.util.TreeSet</node>
+              </SelectedNodes>
               <Categories />
               <SCOPE>All</SCOPE>
               <VISIBILITY>private</VISIBILITY>
@@ -170,7 +165,7 @@
       <file leaf-file-name="NavigableSet.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/NavigableSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
+            <state relative-caret-position="1998">
               <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
             </state>
           </provider>
@@ -179,8 +174,8 @@
       <file leaf-file-name="Hashtable.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Hashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1554">
-              <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+            <state relative-caret-position="191">
+              <caret line="459" column="9" lean-forward="true" selection-start-line="457" selection-start-column="7" selection-end-line="459" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -208,10 +203,13 @@
       <find>contain</find>
       <find>indexOf</find>
       <find>collection</find>
-      <find>add</find>
       <find>set</find>
       <find>comparing</find>
       <find>sort</find>
+      <find>Entry</find>
+      <find>add</find>
+      <find>put</find>
+      <find>put(</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -250,8 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -269,6 +265,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,15 +349,15 @@
       <workItem from="1554099133649" duration="2707000" />
       <workItem from="1554180106722" duration="11882000" />
       <workItem from="1554351092731" duration="8973000" />
+      <workItem from="1554476386620" duration="955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65737000" />
+    <option name="totallyTimeSpent" value="66692000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="-10" width="1940" height="1100" extended-state="6" />
-    <editor active="true" />
+    <frame x="-10" y="-10" width="1940" height="1100" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -371,11 +369,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11308204" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29268292" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49892008" weight="0.3292683" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2672786" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27213824" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -519,13 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1739">
           <caret line="70" column="68" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11544">
-          <caret line="338" column="6" selection-start-line="338" selection-start-column="6" selection-end-line="338" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -674,10 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5735">
           <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
-          <folding>
-            <element signature="e#7819#7820#0" expanded="true" />
-            <element signature="e#7872#7873#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,16 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,10 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,14 +796,14 @@
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5365">
+        <state relative-caret-position="53724">
           <caret line="1507" column="39" selection-start-line="1507" selection-start-column="39" selection-end-line="1507" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/NavigableSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
+        <state relative-caret-position="1998">
           <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
         </state>
       </provider>
@@ -848,8 +821,8 @@
           <ID>JAVA</ID>
           <OriginalElement>java.util.TreeSet</OriginalElement>
           <nodes>
-            <node x="561.5" y="192.0">java.util.AbstractCollection</node>
             <node x="0.0" y="384.0">java.lang.Cloneable</node>
+            <node x="561.5" y="192.0">java.util.AbstractCollection</node>
             <node x="375.50000000000006" y="288.0">java.util.SortedSet</node>
             <node x="496.9204545454546" y="96.0">java.util.Collection</node>
             <node x="548.5" y="288.0">java.util.AbstractSet</node>
@@ -889,17 +862,17 @@
               <point x="452.00000000000006" y="450.0" />
               <point x="0.0" y="23.0" />
             </edge>
-            <edge source="java.util.TreeSet" target="java.util.AbstractSet">
-              <point x="50.625" y="-23.0" />
-              <point x="405.62500000000006" y="460.0" />
-              <point x="631.5" y="460.0" />
-              <point x="0.0" y="23.0" />
-            </edge>
             <edge source="java.util.AbstractSet" target="java.util.Set">
               <point x="-41.5" y="-23.0" />
               <point x="590.0" y="263.0" />
               <point x="501.50000000000006" y="263.0" />
               <point x="24.75" y="23.0" />
+            </edge>
+            <edge source="java.util.TreeSet" target="java.util.AbstractSet">
+              <point x="50.625" y="-23.0" />
+              <point x="405.62500000000006" y="460.0" />
+              <point x="631.5" y="460.0" />
+              <point x="0.0" y="23.0" />
             </edge>
             <edge source="java.util.NavigableSet" target="java.util.SortedSet">
               <point x="0.0" y="-23.0" />
@@ -920,8 +893,10 @@
               <point x="0.0" y="23.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-46.0" y="220.0" />
-          <SelectedNodes />
+          <settings layout="Hierarchic Group" zoom="0.5962732919254659" x="392.5" y="263.0" />
+          <SelectedNodes>
+            <node>java.util.TreeSet</node>
+          </SelectedNodes>
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -930,22 +905,15 @@
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8246">
-          <caret line="134" column="21" lean-forward="true" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="4033">
+          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="91" column="17" lean-forward="true" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
+        <state relative-caret-position="2516">
+          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -963,18 +931,11 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="323.5" y="71.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="324.0" y="71.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -985,28 +946,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Hashtable.java">
+    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1554">
-          <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+        <state relative-caret-position="-10613">
+          <caret line="364" column="59" selection-start-line="364" selection-start-column="54" selection-end-line="364" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="574" column="19" lean-forward="true" selection-start-line="574" selection-start-column="19" selection-end-line="574" selection-end-column="19" />
+        <state relative-caret-position="-845">
+          <caret line="623" column="12" selection-start-line="623" selection-start-column="12" selection-end-line="623" selection-end-column="12" />
           <folding>
             <element signature="e#19296#19297#0" expanded="true" />
             <element signature="e#19379#19380#0" expanded="true" />
+            <element signature="e#24298#24299#0" expanded="true" />
+            <element signature="e#24363#24364#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Hashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="459" column="9" lean-forward="true" selection-start-line="457" selection-start-column="7" selection-end-line="459" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="395">
+          <caret line="13" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="13" />
         </state>
       </provider>
     </entry>
