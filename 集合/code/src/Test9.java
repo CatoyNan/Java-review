@@ -1,12 +1,13 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @description:
  * @author: xjn
- * @create: 2019-04-04 12:17
+ * @create: 2019-04-06 22:03
  **/
-public class Test7 {
-    public class Employee implements Comparable<Employee>{
+public class Test9 {
+    public class Employee{
         private String name;
         private int age;
 
@@ -38,11 +39,6 @@ public class Test7 {
                     ", age=" + age +
                     '}';
         }
-        @Override
-        public int compareTo(Employee o) {
-            int x = Integer.compare(getAge(),o.getAge());
-            return x==0?getName().length()-o.getName().length():x;
-        }
     }
 
     public void run(){
@@ -52,10 +48,19 @@ public class Test7 {
         employees[2]=new Employee("小黑",20);
         employees[3]=new Employee("小灰",8);
         employees[4]=new Employee("小刘",30);
-        Arrays.sort(employees);
-        for(int i=0;i<employees.length;i++){
-            System.out.println(employees[i].toString());
-        }
+        // comparing 方法接收一个 Function 函数式接口 ，通过一个 lambda 表达式传入
+        //lambda表达式可以换成方法引用Class::functionName
+        //等于说comparing传入两个lambda表达式，第一个是传给函数式接口Function{}的，用来返回
+        //需要比较的对象，第二个是传给Comparator接口的Compare方法
+//        Arrays.sort(employees,Comparator.comparing(Employee::getAge,(o1,o2)->{
+//            return Integer.compare(o1,o2);
+//        }).thenComparing(Employee::getName,(o1,o2) ->{
+//            return o1.length()-o2.length();
+//        }));
+
+        //用变体，避免int、double的封装
+        Arrays.sort(employees,Comparator.comparingInt(Employee::getAge)
+                .thenComparingInt(p -> p.getName().length()));
     }
     public static void main(String[] args) {
         Test7 test7 = new Test7();

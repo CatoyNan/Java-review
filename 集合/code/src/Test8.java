@@ -1,12 +1,12 @@
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * @description:
  * @author: xjn
- * @create: 2019-04-04 12:17
+ * @create: 2019-04-06 21:34
  **/
-public class Test7 {
-    public class Employee implements Comparable<Employee>{
+public class Test8 {
+    public class Employee{
         private String name;
         private int age;
 
@@ -38,11 +38,6 @@ public class Test7 {
                     ", age=" + age +
                     '}';
         }
-        @Override
-        public int compareTo(Employee o) {
-            int x = Integer.compare(getAge(),o.getAge());
-            return x==0?getName().length()-o.getName().length():x;
-        }
     }
 
     public void run(){
@@ -52,7 +47,10 @@ public class Test7 {
         employees[2]=new Employee("小黑",20);
         employees[3]=new Employee("小灰",8);
         employees[4]=new Employee("小刘",30);
-        Arrays.sort(employees);
+        Arrays.sort(employees,((o1, o2) -> {
+            int x = Integer.compare(o1.getAge(),o2.getAge());
+            return x==0?o1.getName().length()-o2.getName().length():x;
+        }));
         for(int i=0;i<employees.length;i++){
             System.out.println(employees[i].toString());
         }
