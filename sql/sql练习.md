@@ -17,3 +17,12 @@ update websites set name='小米',url='https://xiaomi.com' where name='京东'
 delete from websites where id=6
 ```
 
+## 二、Limit
+
+```sql
+/*从第四行开始读取三条记录，下标从0开始*/
+SELECT * FROM websites LIMIT 3 OFFSET 3
+/*简化版* 从下标0开始读取三行/
+SELECT * FROM websites LIMIT 0,3
+```
+

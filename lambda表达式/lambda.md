@@ -240,3 +240,59 @@ public class Test9 {
 Person[] perple = stream.toArray(Pserson[]::new)
 ```
 
+## 五、作用区域
+
+- lambda表达式是一个闭包，自由变量会被保存并且调用，但是不能改变其值，否则会报错(线程不安全)
+
+### 5.1只能引用值不能改变值
+
+```java
+/**
+ * @description: lambda表达式作用域
+ * @author: xjn
+ * @create: 2019-04-07 16:54
+ **/
+public class Test10 {
+    public static void main(String[] args){
+        String text2 = "外部自由变量";
+        Consumer<String> consumer = (text) ->{
+            System.out.println(text);
+            System.out.println(text2);
+            //会报错,lambda 表达式引用的本地变量必须是最终变量或实际上的最终变量
+			//text2 = "重新赋值";
+        };
+        consumer.accept("内部参数");
+    }
+}
+```
+
+### 5.2在外部改变引用的值不合法
+
+```java
+public static void main(String[] args){
+        String text2 = "外部自由变量";
+        Consumer<String> consumer = (text) ->{
+            System.out.println(text);
+            System.out.println(text2);
+        };
+        consumer.accept("内部参数");
+        //会报错
+        text2 = "外部自由变量重新赋值";
+    }
+```
+
+### 5.3lambda表达式变量名与局部变量名重复不合法
+
+```java
+public static void main(String[] args){
+        String text = "外部自由变量";
+        Consumer<String> consumer = (text) ->{
+            System.out.println(text);
+        };
+        consumer.accept("内部参数");
+    }
+```
+
+### 5.4this
+
+- 指创建这个lambda表达式的方法的this参数
