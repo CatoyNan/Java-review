@@ -203,9 +203,55 @@ public class Test6 {
 
   - object::instanceMethod
   - Class::staticMehtod
-  - Class::instanceMethod
+  - Class::instanceMethod(表达式中第一个参数用来调用实例方法,剩下的对象作为实例方法的参数)
+  - Class::new
 
   替换
+
+- 函数式接口中方法的参数和返回值与某个现有方法的参数和返回值一样，那么就可以引用。lambda表达式与方法引用是一种等价关系
+- 与方法调用完全是两个概念，没有关系（class.funName()）
+
+```java
+public class Test14 {
+    public static void main(String[] args){
+        //类名::静态方法名
+        Consumer<String> consumer1 = (x) -> {Dog.bark(x);};
+        Consumer<String> consumer2 = Dog::bark;
+
+        //实例名::实例方法名
+        Dog dog = new Dog("dog1");
+        Consumer<String> consumer3 = (x) -> {dog.eat(x);};
+        Consumer<String> consumer4 = dog::eat;
+
+        //类名::实例方法名
+        //引用方法的参数要与函数式接口中的方法参数对应
+        //由于函数式接口中方法的第一个参数是去调用引用的实例方法,
+        //因此函数式接口中方法的参数会比引用方法的参数多一个。
+        BiConsumer<Dog,Dog> consumer5 = Dog::mkFrinds;
+        consumer5.accept(new Dog("dog1"),new Dog("dog2"));
+    }
+}
+class Dog{
+    private String name;
+
+    public Dog(String name){
+        this.name = name;
+    }
+	...
+
+    public static void bark(String name){
+        System.out.println(name + "叫");
+    }
+
+    public void eat(String food){
+        System.out.println("eat" + food);
+    }
+
+    public void mkFrinds(Dog dog){
+        System.out.println("和" + dog.getName() + "做朋友");
+    }
+}
+```
 
 
 

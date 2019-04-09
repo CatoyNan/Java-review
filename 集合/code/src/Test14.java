@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.function.Function;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 /**
  * @description:
@@ -10,35 +7,48 @@ import java.util.function.Function;
  * @create: 2019-04-08 22:07
  **/
 public class Test14 {
-    public void run(){
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("小明",15));
-        employeeList.add(new Employee("小明",14));
-//        Collections.sort(employeeList, new Comparator<Employee>() {
-//            @Override
-//            public int compare(Employee o1, Employee o2) {
-//                return Integer.compare(o1.getAge(),o2.getAge());
-//            }
-//        });
+    public static void main(String[] args){
+        //类名::静态方法名
+        Consumer<String> consumer1 = (x) -> {Dog.bark(x);};
+        Consumer<String> consumer2 = Dog::bark;
 
-//        Collections.sort(employeeList,Comparator.comparing(new Function<Employee, Integer>(){
-//            @Override
-//            public Integer apply(Employee employee) {
-//                return employee.getAge();
-//            }
-//        },(o1,o2) ->{ return Integer.compare((int)o1,(int)o2);}));
+        //实例名::实例方法名
+        Dog dog = new Dog("dog1");
+        Consumer<String> consumer3 = (x) -> {dog.eat(x);};
+        Consumer<String> consumer4 = dog::eat;
 
-//        Collections.sort(employeeList,Comparator.comparing(o ->  o.getAge(),
-//                (o1,o2) ->{ return Integer.compare((int)o1,(int)o2);}));
+        //类名::实例方法名
+        //引用方法的参数要与函数式接口中的方法参数对应
+        //由于函数式接口中方法的第一个参数是去调用引用的实例方法,
+        //因此函数式接口中方法的参数会比引用方法的参数多一个。
+        BiConsumer<Dog,Dog> consumer5 = Dog::mkFrinds;
+        consumer5.accept(new Dog("dog1"),new Dog("dog2"));
+    }
+}
+class Dog{
+    private String name;
 
-        Collections.sort(employeeList,Comparator.comparing(o ->  o.getAge(),
-                (o1,o2) ->{ return Integer.compare((int)o1,(int)o2);}));
-
-        System.out.println(employeeList.toString());
+    public Dog(String name){
+        this.name = name;
     }
 
-    public static void main(String[] args){
-        Test14 test14 = new Test14();
-        test14.run();
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void bark(String name){
+        System.out.println(name + "叫");
+    }
+
+    public void eat(String food){
+        System.out.println("eat" + food);
+    }
+
+    public void mkFrinds(Dog dog){
+        System.out.println("和" + dog.getName() + "做朋友");
     }
 }
