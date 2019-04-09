@@ -199,6 +199,16 @@ public class Test6 {
 
 ## 三、方法引用
 
+- lambda表达式中方法体在某个类或对象中已实现，可以用
+
+  - object::instanceMethod
+  - Class::staticMehtod
+  - Class::instanceMethod
+
+  替换
+
+
+
 ```java
 public class Test9 {
     public class Employee{
@@ -216,6 +226,12 @@ public class Test9 {
         employees[3]=new Employee("小灰",8);
         employees[4]=new Employee("小刘",30);
         // comparing 方法接收一个 Function 函数式接口 ，通过一个 lambda 表达式传入
+        //这个表达式是(e) -> e.getAge();
+        //所以apply方法体实现为
+        //R apply(T t){
+        //	return t.getAge();
+    	//}
+        //这和Employee的getAge()方法功能一样，
         //lambda表达式可以换成方法引用Class::functionName
         //等于说comparing传入两个lambda表达式，第一个是传给函数式接口Function{}的，用来返回
         //需要比较的对象，第二个是传给Comparator接口的Compare方法
@@ -260,13 +276,16 @@ public class Test10 {
             System.out.println(text2);
             //会报错,lambda 表达式引用的本地变量必须是最终变量或实际上的最终变量
 			//text2 = "重新赋值";
+            
+            //不会报错text只是传入的参数
+            //text = "重新赋值";
         };
         consumer.accept("内部参数");
     }
 }
 ```
 
-### 5.2在外部改变引用的值不合法
+### 5.2在外部改变引用的值(自由变量)不合法
 
 ```java
 public static void main(String[] args){
@@ -279,6 +298,19 @@ public static void main(String[] args){
         //会报错
         text2 = "外部自由变量重新赋值";
     }
+
+//这里是合法的，i是传入的参数
+public class Test11 {
+    public static void repeat(int n, IntConsumer intConsumer){
+        for(int i=0;i<n;i++){
+            intConsumer.accept(i);
+        }
+    }
+    public static void main(String[] args){
+       Test11.repeat(10,x->System.out.println(9-x));
+    }
+}
+
 ```
 
 ### 5.3lambda表达式变量名与局部变量名重复不合法

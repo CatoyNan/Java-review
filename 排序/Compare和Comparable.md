@@ -1,6 +1,6 @@
 # Compare和Comparable比较
 
-## 一、数组
+## 一、Comparable
 
 ### 1.1对象实现Comparable接口
 
@@ -39,9 +39,9 @@ public class Test7 {
 
 ```
 
+## 二、Comparator
 
-
-### 1.2比较器实现Comparator接口
+### 2.1比较器实现Comparator接口
 
 ```java
 public class Test8 {
@@ -72,15 +72,13 @@ public class Test8 {
 
 
 
-
-
-使用Comparator.comparing()
+### 2.2使用Comparator.comparing()
 
 - Comparator.comparing()返回的是一个定义好compare()方法的Comparator。有两种形式
 
   - ```java
-    //第一个参数为函数式接口，可以传入一个lambda表达式，其中lambda表达式可以用方法引用::
-    //第二个参数为Comparator接口，可以传入一个lambda表达式
+    //第一个参数为函数型函数式接口，可以传入一个lambda表达式，其中lambda表达式可以用方法引用::。(提取键)
+    //第二个参数为Comparator接口，可以传入一个lambda表达式。(指定比较器)
     Comparator.comparing(Function<? super T, ? extends U> keyExtractor,
                 Comparator<? super U> keyComparator)
     ```
@@ -132,12 +130,43 @@ public class Test9 {
 
 ```
 
+### 2.3nullsFirst、nullsLast
 
+- 如果返回结果中含有null则得用nullsFirst和nullsLast适配器,否则会报错
 
-## 二、集合
+```java
+//nullFirst会修改现有比较器,从而遇到null值时不会抛出异常
 
-### 2.1List
+public class Test12 {
+    public void run(){
+        Integer[] arry = new Integer[]{4,1,null,3,null};
+        //现有比较器
+        Comparator comparator = (o1,o2)->{
+            return Integer.compare((int)o1,(int)o2);
+        };
+        //改造后比较器
+        Arrays.sort(arry,Comparator.nullsFirst(comparator));
+        for(int i=0;i<arry.length;i++){
+            if(arry[i]==null){
+                System.out.println("null");
+            }else{
+                System.out.println(arry[i].intValue());
+            }
 
-### 2.2Set
+        }
+    }
 
-### 2.3Queue
+    public static void main(String[] args){
+        Test12 test12 = new Test12();
+        test12.run();
+    }
+}
+/*
+ *null
+ *null
+ *1
+ *3
+ *4
+* */
+```
+
