@@ -5,6 +5,8 @@
 ```sql
 select * from websites where name='Google' or name='Facebook'
 
+select * from websites where name != 'Google' and id != 2
+
 select * from websites where name not in ('Google','Facebook')
 
 select  name,url,alexa,country from websites order by country ASC,name desc
@@ -24,5 +26,14 @@ delete from websites where id=6
 SELECT * FROM websites LIMIT 3 OFFSET 3
 /*简化版* 从下标0开始读取三行/
 SELECT * FROM websites LIMIT 0,3
+```
+
+## 三、Distinct
+
+```sql
+/*select distinct country from websites*/
+
+/*除非指定的两列的属性都相同，否则都会列出来*/
+/*select distinct name,country from websites*/
 ```
 
