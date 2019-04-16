@@ -48,6 +48,8 @@ int[] a = {1,2,3}
 
 ### 4.1两个变量引用同一个数组
 
+- 浅拷贝
+
 ```java
  int[] smallPrimes = {2,3,4,5};
  int[] luckyNumber = smallPrimes;
@@ -61,9 +63,96 @@ int[] a = {1,2,3}
 
 ![1555339373567](Array.assets/1555339373567.png)
 
-### 4.2clone 方法
+### 4.2 System.arraycopy及其包装方法
 
-#### 4.21基本数据类型+String
+#### 4.21 System.arraycopy
+
+- 对于引用类型是浅拷贝
+- 需要复制到一个已经分配内存单元的数组。
+
+```java
+//arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+//原数组， 原数组的开始位置， 目标数组， 目标数组的开始位置， 拷贝个数）
+ Employee[] arr1 = { new Employee("小明",12),
+                     new Employee("小黄",11)};
+ Employee[] arr2 = new Employee[arr1.length];
+ System.arraycopy(arr1,0,arr2,1,1);
+ System.out.println("arr1"+Arrays.toString(arr1));
+ System.out.println("arr2"+Arrays.toString(arr2));
+ System.out.println("************************");
+ arr1[0].setName("小丽");
+ System.out.println("arr1"+Arrays.toString(arr1));
+ System.out.println("arr2"+Arrays.toString(arr2));
+/**
+ *arr1[Employee{name='小明', age=12}, Employee{name='小黄', age=11}]
+ *arr2[null, Employee{name='小明', age=12}]
+ * *************************
+ *arr1[Employee{name='小丽', age=12}, Employee{name='小黄', age=11}]
+ *arr2[null, Employee{name='小丽', age=12}]
+* */
+```
+
+#### 4.22 Arrays.copyOf
+
+- 对于引用类型是前拷贝
+- 底层其实是用的System.arraycopy 
+- 使用该方法无需我们事先使用new关键字对对象进行内存单元的分配
+
+```java
+	//copyOf(T[] original, int newLength)
+	//（原数组，拷贝的个数）
+    public static void main(String[] args){
+        Employee[] arr1 = { new Employee("小明",12),
+                            new Employee("小黄",11)};
+        Employee[] arr2 = Arrays.copyOf(arr1,1);
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+    }
+
+//[Employee{name='小明', age=12}, Employee{name='小黄', age=11}]
+//[Employee{name='小明', age=12}]
+//**************
+//[Employee{name='小丽', age=12}, Employee{name='小黄', age=11}]
+//[Employee{name='小丽', age=12}]
+```
+
+
+
+#### 4.23 Arrays.copyOfRange
+
+- 对于引用变量是浅拷贝
+- 底层其实是用的System.arraycopy ,只不过封装了一个方法
+
+```java
+	//copyOfRange(T[] original, int from, int to)
+	//（原数组，开始位置，拷贝的个数）
+	//截取从下标为from开始,到下标为（to-1）结束
+	//赋值整个数组（a[],0,a.length）
+    public static void main(String[] args){
+        Employee[] arr1 = { new Employee("小明",12),
+                            new Employee("小黄",11)};
+        Employee[] arr2 = Arrays.copyOfRange(arr1,0,1);
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+        System.out.println("**************");
+        arr1[0].setName("小丽");
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+    }
+/**
+ * [Employee{name='小明', age=12}, Employee{name='小黄', age=11}]
+ * [Employee{name='小明', age=12}]
+ * **************
+ * [Employee{name='小丽', age=12}, Employee{name='小黄', age=11}]
+ * [Employee{name='小丽', age=12}]
+ */
+```
+
+
+
+### 4.3 clone 方法
+
+#### 4.31基本数据类型+String
 
 - 深拷贝
 
@@ -93,7 +182,7 @@ int[] a = {1,2,3}
 
 ![1555340127085](Array.assets/1555340127085.png)
 
-#### 4.22引用类型
+#### 4.32引用类型
 
 - 浅拷贝
 
