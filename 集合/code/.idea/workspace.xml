@@ -15,7 +15,7 @@
       <file leaf-file-name="Test21.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test21.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
+            <state relative-caret-position="1110">
               <caret line="32" selection-start-line="32" selection-end-line="36" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/Test22.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
-              <caret line="10" column="51" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="51" />
+              <caret line="10" column="51" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -36,8 +36,8 @@
       <file leaf-file-name="Test23.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test23.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="17" column="50" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="17" selection-end-column="50" />
+            <state relative-caret-position="629">
+              <caret line="17" column="50" selection-start-line="12" selection-start-column="7" selection-end-line="17" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -54,7 +54,7 @@
       <file leaf-file-name="Arrays.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="126281">
               <caret line="3484" column="36" selection-start-line="3484" selection-start-column="36" selection-end-line="3484" selection-end-column="36" />
               <folding>
                 <element signature="e#5027#5028#0" expanded="true" />
@@ -67,12 +67,8 @@
       <file leaf-file-name="TreeSet.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2849">
+            <state relative-caret-position="3700">
               <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
-              <folding>
-                <element signature="e#9664#9665#0" expanded="true" />
-                <element signature="e#9710#9711#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,7 +76,7 @@
       <file leaf-file-name="TreeMap.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42476">
+            <state relative-caret-position="46546">
               <caret line="1258" selection-start-line="1258" selection-end-line="1258" />
             </state>
           </provider>
@@ -89,7 +85,7 @@
       <file leaf-file-name="Comparable.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/lang/Comparable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4144">
+            <state relative-caret-position="4995">
               <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
             </state>
           </provider>
@@ -98,12 +94,8 @@
       <file leaf-file-name="HashSet.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2627">
+            <state relative-caret-position="3478">
               <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
-              <folding>
-                <element signature="e#8033#8034#0" expanded="true" />
-                <element signature="e#8081#8082#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +103,7 @@
       <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21386">
+            <state relative-caret-position="23051">
               <caret line="623" column="12" selection-start-line="623" selection-start-column="12" selection-end-line="623" selection-end-column="12" />
             </state>
           </provider>
@@ -206,8 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,7 +234,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,12 +333,13 @@
       <workItem from="1555153924167" duration="11606000" />
       <workItem from="1555214188312" duration="2434000" />
       <workItem from="1555306032096" duration="6848000" />
-      <workItem from="1555381394020" duration="4431000" />
+      <workItem from="1555381394020" duration="4768000" />
+      <workItem from="1555477324384" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132566000" />
+    <option name="totallyTimeSpent" value="133501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="-10" width="1940" height="1100" extended-state="6" />
@@ -354,19 +347,18 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.18847007" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5010799" side_tool="true" weight="0.3292683" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3104213" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3104213" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49892008" weight="0.3292683" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34071276" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34665227" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -380,6 +372,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.18847007" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,10 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7733">
           <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="true" />
-            <element signature="e#10148#10149#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,18 +728,14 @@
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2627">
+        <state relative-caret-position="3478">
           <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
-          <folding>
-            <element signature="e#8033#8034#0" expanded="true" />
-            <element signature="e#8081#8082#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21386">
+        <state relative-caret-position="23051">
           <caret line="623" column="12" selection-start-line="623" selection-start-column="12" selection-end-line="623" selection-end-column="12" />
         </state>
       </provider>
@@ -771,32 +756,28 @@
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2849">
+        <state relative-caret-position="3700">
           <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
-          <folding>
-            <element signature="e#9664#9665#0" expanded="true" />
-            <element signature="e#9710#9711#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/lang/Comparable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4144">
+        <state relative-caret-position="4995">
           <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/TreeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42476">
+        <state relative-caret-position="46546">
           <caret line="1258" selection-start-line="1258" selection-end-line="1258" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test21.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
+        <state relative-caret-position="1110">
           <caret line="32" selection-start-line="32" selection-end-line="36" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -807,20 +788,20 @@
     <entry file="file://$PROJECT_DIR$/src/Test22.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
-          <caret line="10" column="51" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="51" />
+          <caret line="10" column="51" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test23.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="17" selection-end-column="50" />
+        <state relative-caret-position="629">
+          <caret line="17" column="50" selection-start-line="12" selection-start-column="7" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
+        <state relative-caret-position="126281">
           <caret line="3484" column="36" selection-start-line="3484" selection-start-column="36" selection-end-line="3484" selection-end-column="36" />
           <folding>
             <element signature="e#5027#5028#0" expanded="true" />
