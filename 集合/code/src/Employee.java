@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /**
  * @description:
  * @author: xjn
@@ -6,10 +8,12 @@
 public class Employee {
     private String name;
     private int age;
+    private Date date;
 
     public Employee(String name, int age) {
         this.name = name;
         this.age = age;
+        this.date = new Date();
     }
 
     public String getName() {
@@ -24,8 +28,18 @@ public class Employee {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public Date getDate() {
+        return (Date) date.clone();
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Employee employee =(Employee)obj;
+        return name.equals(employee.name);//可以直接访问私有name域
     }
 
     @Override
