@@ -43,7 +43,7 @@ class UserService{
 ## 四、从容器中获取实例
 
 ```java
- @Test
+ @ApiTest
     public void test1(){
         //获取容器
         String path = "applicationContext.xml";

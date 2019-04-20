@@ -1,6 +1,7 @@
 package service.impl;
 
 import dao.UserDao;
+import dao.impl.UserDaoImpl;
 import entity.User;
 import service.UserService;
 
@@ -13,6 +14,10 @@ import java.util.Date;
  **/
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
+
+    public UserServiceImpl() {
+        this.userDao = new UserDaoImpl();
+    }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
