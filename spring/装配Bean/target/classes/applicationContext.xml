@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--将静态工厂创建的实例交给spring-->
+    <bean id="myBeanFactoryId" class="BeanFacoty.MyBeanFacory" factory-method="createServie"></bean>
+
+    <!--将实例工厂创建的实例交给spring-->
+    <!--创建工厂实例-->
+    <bean id="myBeanFactoryId2" class="BeanFacoty.MyBeanFacory2"></bean>
+    <!--获得工厂创建的实例-->
+    <bean id="userServiceid2" factory-bean="myBeanFactoryId2" factory-method="createService"></bean>
+</beans>
