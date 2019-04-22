@@ -83,4 +83,118 @@ public void testBeanFactory2(){
 ## 三、Bean的种类
 
 - 普通bean<bean id="" class="A"><bean>创建A的实例并返回
-- FactoryBean
+- FactoryBean：是一个特殊的bean,具有工厂生产对象的能力，只能生产特定对象。bean必须去实现FactoryBean接口，此接口提供一个方法getObject(),用于返回特定的bean。AOP使用
+
+## 四、Bean作用域
+
+![1555945136527](装配Bean.assets/1555945136527.png)
+
+### 4.1配置文件
+
+```xml
+<!--bean作用域-->
+<!--单例-->
+<bean id="userServiceId3" class="service.impl.UserServiceImpl" scope="singleton"></bean>
+<!--多例-->
+<bean id="userServiceId4" class="service.impl.UserServiceImpl" scope="prototype"></bean>
+```
+
+### 4.2生产实例
+
+```java
+//单例
+@Test
+public void testScope(){
+    String path = "applicationContext.xml";
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+    UserService userService1 = applicationContext.getBean("userServiceId3",UserService.class);
+    UserService userService2 = applicationContext.getBean("userServiceId3",UserService.class);
+    System.out.println(userService1);//service.impl.UserServiceImpl@79be0360
+    System.out.println(userService2);//service.impl.UserServiceImpl@79be0360
+}
+```
+
+```java
+//多例
+@Test
+public void testScope2(){
+    String path = "applicationContext.xml";
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+    UserService userService1 = applicationContext.getBean("userServiceId4",UserService.class);
+    UserService userService2 = applicationContext.getBean("userServiceId4",UserService.class);
+    System.out.println(userService1);//service.impl.UserServiceImpl@79be0360
+    System.out.println(userService2);//service.impl.UserServiceImpl@22a67b4
+}
+```
+
+## 五、Bean生命周期
+
+## 5.1初始化和销毁
+
+- 初始化：准备数据
+- 销毁：销毁数据。容器销毁才能执行，bean要为单例
+
+### 5.11配置文件
+
+```xml
+<!--生命周期-->
+<bean id="userServiceId5"
+      class="service.impl.UserServiceImplLifeCycle"
+      init-method="myInit"
+      destroy-method="myDestroy">
+</bean>
+```
+
+### 5.12增加初始化和销毁方法
+
+```java
+public class UserServiceImplLifeCycle implements UserService {
+    private UserDao userDao;
+
+    public UserServiceImplLifeCycle() {
+        this.userDao = new UserDaoImpl();
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public User getAllInfo() {
+        return userDao.getAllInfo();
+    }
+
+    public void myInit(){
+        System.out.println("初始化");
+    }
+
+    public void myDestroy(){
+        System.out.println("销毁");
+    }
+}
+```
+
+### 5.13测试
+
+```java
+@Test
+public void testLifeCicle(){
+    String path = "applicationContext.xml";
+    //初始化容器
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+    //销毁容器
+    ((ClassPathXmlApplicationContext) applicationContext).destroy();
+}
+/**
+ * 初始化
+ * 四月 22, 2019 11:54:47 下午 org.springframework.context.support.ClassPathXmlApplicationContext doClose
+ * 信息: Closing org.springframework.context.support.ClassPathXmlApplicationContext@3ada9e37: startup date [Mon Apr 22 23:54:46 CST 2019]; root of context hierarchy
+ * 销毁
+ */
+```
+
+## 5.2beanPostProcess
+
+- 只要实现这个接口，并且将实现类提供给spring容器，在初始化方法前将执行before(),在初始化方法之后将执行after()
+
+
+

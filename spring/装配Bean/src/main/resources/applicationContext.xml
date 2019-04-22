@@ -2,12 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--将静态工厂创建的实例交给spring-->
-    <bean id="myBeanFactoryId" class="BeanFacoty.MyBeanFacory" factory-method="createServie"></bean>
+    <!--&lt;!&ndash;将静态工厂创建的实例交给spring&ndash;&gt;-->
+    <!--<bean id="myBeanFactoryId" class="BeanFacoty.MyBeanFacory" factory-method="createServie"></bean>-->
 
-    <!--将实例工厂创建的实例交给spring-->
-    <!--创建工厂实例-->
-    <bean id="myBeanFactoryId2" class="BeanFacoty.MyBeanFacory2"></bean>
-    <!--获得工厂创建的实例-->
-    <bean id="userServiceid2" factory-bean="myBeanFactoryId2" factory-method="createService"></bean>
+    <!--&lt;!&ndash;将实例工厂创建的实例交给spring&ndash;&gt;-->
+    <!--&lt;!&ndash;创建工厂实例&ndash;&gt;-->
+    <!--<bean id="myBeanFactoryId2" class="BeanFacoty.MyBeanFacory2"></bean>-->
+    <!--&lt;!&ndash;获得工厂创建的实例&ndash;&gt;-->
+    <!--<bean id="userServiceid2" factory-bean="myBeanFactoryId2" factory-method="createService"></bean>-->
+    <!---->
+
+    <!--&lt;!&ndash;bean作用域&ndash;&gt;-->
+    <!--&lt;!&ndash;单例&ndash;&gt;-->
+    <!--<bean id="userServiceId3" class="service.impl.UserServiceImpl" scope="singleton"></bean>-->
+    <!--&lt;!&ndash;多例&ndash;&gt;-->
+    <!--<bean id="userServiceId4" class="service.impl.UserServiceImpl" scope="prototype"></bean>-->
+
+    <!--生命周期-->
+    <bean id="userServiceId5"
+          class="service.impl.UserServiceImplLifeCycle"
+          init-method="myInit"
+          destroy-method="myDestroy">
+    </bean>
 </beans>
