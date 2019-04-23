@@ -24,4 +24,13 @@ public class TestLifeCicle {
      * 信息: Closing org.springframework.context.support.ClassPathXmlApplicationContext@3ada9e37: startup date [Mon Apr 22 23:54:46 CST 2019]; root of context hierarchy
      * 销毁
      */
+
+    @Test
+    public void testLifeCicle2(){
+        String path = "applicationContext.xml";
+        //初始化容器
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+        //销毁容器
+        ((ClassPathXmlApplicationContext) applicationContext).destroy();
+    }
 }

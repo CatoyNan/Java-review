@@ -194,7 +194,27 @@ public void testLifeCicle(){
 
 ## 5.2beanPostProcess
 
-- 只要实现这个接口，并且将实现类提供给spring容器，在初始化方法前将执行before(),在初始化方法之后将执行after()
+- 只要实现这个接口(beanPostProcess)，并且将实现类提供给spring容器，在初始化方法前将执行before(),在初始化方法之后将执行after()
+
+![1555986950378](装配Bean.assets/1555986950378.png)
+
+- spring提供工厂钩子用于修改实例，对象可以生成代理对象，是AOP底层
+
+  模拟：
+
+  A a = new A();
+
+  a = B.before(a);   -->将实例对象a传给后处理bean，生成代理对象并返回
+
+  a.init();	
+
+  a = B.after(a);
+
+  a.function();
+
+  a.destroy();
+
+### 5.21 beanPostProcess实现类提供给容器
 
 
 
