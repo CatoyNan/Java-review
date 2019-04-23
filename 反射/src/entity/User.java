@@ -10,14 +10,16 @@ import java.util.Date;
 public class User {
     private String name;
     private Date date;
+    public String sex;
 
     public User(){
 
     }
 
-    public User(String name, Date date) {
+    public User(String name, Date date, String sex) {
         this.name = name;
         this.date = date;
+        this.sex = sex;
     }
 
     public String getName() {
@@ -29,10 +31,27 @@ public class User {
     }
 
     public Date getDate() {
-        return (Date) date.clone();
+        return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", date=" + date +
+                ", sex='" + sex + '\'' +
+                '}';
     }
 }
