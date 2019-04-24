@@ -22,6 +22,7 @@ public class UserServiceImplLifeCycle implements UserService {
     }
 
     public User getAllInfo() {
+        System.out.println("执行目标类方法");
         return userDao.getAllInfo();
     }
 

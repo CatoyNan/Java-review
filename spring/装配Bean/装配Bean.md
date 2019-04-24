@@ -214,7 +214,90 @@ public void testLifeCicle(){
 
   a.destroy();
 
-### 5.21 beanPostProcess实现类提供给容器
+### 5.21 UserServiceImplLifeCycle实现类
 
+```java
+public class UserServiceImplLifeCycle implements UserService {
+    private UserDao userDao;
+    ...
+    public User getAllInfo() {
+        System.out.println("执行目标类方法");
+        return userDao.getAllInfo();
+    }
 
+    public void myInit(){
+        System.out.println("初始化");
+    }
 
+    public void myDestroy(){
+        System.out.println("销毁");
+    }
+}
+```
+
+### 5.22 编写后处理类beanPostProcess
+
+- 将事物写在后方法里，是因为在前方法之后会调用UserServiceImpl的初始化方法，而其接口没有该方法，使用JDK动态代理的话，如果接口中没有相应的方法就不会执行
+- 如果写在前方法里，需要接口中也要有初始化方法
+
+```java
+public class MybeanPostProcesser implements BeanPostProcessor {
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("前方法");
+        return bean;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("后方法");
+        //生成代理
+        return Proxy.newProxyInstance(MybeanPostProcesser.class.getClassLoader(),
+                bean.getClass().getInterfaces(),
+                (proxy,method,args) ->{
+                      System.out.println("事物插入1");
+                      //执行目标方法
+                      Object returnvalue = method.invoke(bean,args);
+                      System.out.println("事物插入2");
+                      return returnvalue;
+                });
+    }
+}
+```
+
+### 5.23 beanPostProcess实现类提供给容器
+
+```xml
+ 	<!--生命周期-->
+    <bean id="userServiceId5"
+          class="service.impl.UserServiceImplLifeCycle"
+          init-method="myInit"
+          destroy-method="myDestroy">
+    </bean>
+
+    <bean class="beanPostProcess.MybeanPostProcesser"></bean>
+```
+
+### 5.24 测试
+
+```java
+	@Test
+    public void testLifeCicle2(){
+        String path = "applicationContext.xml";
+        //初始化容器
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+       UserService userService = 		         applicationContext.getBean("userServiceId5",UserService.class);
+       userService.getAllInfo();
+
+        //销毁容器
+        ((ClassPathXmlApplicationContext) applicationContext).destroy();
+    }
+}
+//前方法
+//初始化
+//后方法
+//事物插入1
+//执行目标类方法
+//事物插入2
+//销毁
+```

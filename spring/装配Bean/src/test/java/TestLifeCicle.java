@@ -30,6 +30,9 @@ public class TestLifeCicle {
         String path = "applicationContext.xml";
         //初始化容器
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+       UserService userService = applicationContext.getBean("userServiceId5",UserService.class);
+       userService.getAllInfo();
+
         //销毁容器
         ((ClassPathXmlApplicationContext) applicationContext).destroy();
     }

@@ -46,6 +46,10 @@ public class User {
         this.sex = sex;
     }
 
+    private void run(String param){
+        System.out.println(param);
+    }
+
     @Override
     public String toString() {
         return "User{" +
