@@ -1,6 +1,6 @@
 # 装配Bean
 
-## 一、基于XML
+## 一、实例化Bean
 
 ### 1.1 实例化方法
 
@@ -18,7 +18,7 @@
 #### 1.12静态工厂
 
 - 用于整合其他框架或工具
-- 静态工厂：用于生成势力对象，所有的方法必须是static
+- 静态工厂：用于生成实例对象，所有的方法必须是static
 
 ```xml
 <!--<Bean id="" class="工厂全限定类名" factory-method="静态方法">-->
@@ -78,12 +78,13 @@ public void testBeanFactory2(){
 }
 ```
 
-## 二、基于注解
+## ~~二、基于注解~~
 
 ## 三、Bean的种类
 
 - 普通bean<bean id="" class="A"><bean>创建A的实例并返回
 - FactoryBean：是一个特殊的bean,具有工厂生产对象的能力，只能生产特定对象。bean必须去实现FactoryBean接口，此接口提供一个方法getObject(),用于返回特定的bean。AOP使用
+- 参考链接<https://www.cnblogs.com/quanyongan/p/4133724.html>
 
 ## 四、Bean作用域
 
@@ -128,6 +129,10 @@ public void testScope2(){
 ```
 
 ## 五、Bean生命周期
+
+[基于注解]: #七、装配Bean基于注解
+
+
 
 ## 5.1初始化和销毁
 
@@ -237,7 +242,7 @@ public class UserServiceImplLifeCycle implements UserService {
 
 ### 5.22 编写后处理类beanPostProcess
 
-- 将事物写在后方法里，是因为在前方法之后会调用UserServiceImpl的初始化方法，而其接口没有该方法，使用JDK动态代理的话，如果接口中没有相应的方法就不会执行
+- 将事物写在后方法里，是因为在前方法之后会调用UserServiceImplLifeCycle的初始化方法，而其接口没有该方法，使用JDK动态代理的话，如果接口中没有相应的方法就不会执行
 - 如果写在前方法里，需要接口中也要有初始化方法
 
 ```java
@@ -301,3 +306,172 @@ public class MybeanPostProcesser implements BeanPostProcessor {
 //事物插入2
 //销毁
 ```
+
+## 六、Bean属性注入
+
+[基于注解]: #七、装配Bean基于注解
+
+
+
+### 6.1 属性注入
+
+```xml
+<!--bean属性注入-->
+<!--sertter方法注入-->
+<bean id="studentId" class="entity.Student">
+    <!--普通数据-->
+    <property name="name" value="小明"></property>
+    <!--引用数据-->
+    <property name="address" ref="addressId"></property>
+</bean>
+<!--注入的对象-->
+<bean id="addressId" class="entity.Address">
+    <property name="home" value="北京"></property>
+</bean>
+```
+
+### 6.2 集合注入
+
+```xml
+<!--集合注入-->
+<!--集合的注入都是给property添加子标签-->
+<!--普通数据value、引用数据ref-->
+<bean id="collectionData" class="Data.CollectionData">
+    <property name="listData">
+        <list>
+            <value>first</value>
+            <value>second</value>
+            <value>third</value>
+        </list>
+    </property>
+    <property name="mapData">
+        <map>
+            <entry key="first" value="data1"></entry>
+            <entry key="second" value="data2"></entry>
+            <entry key="third" value="data3"></entry>
+        </map>
+    </property>
+    <property name="setData">
+        <set>
+            <value>first</value>
+            <value>second</value>
+            <value>third</value>
+        </set>
+    </property>
+    <property name="properties">
+        <props>
+            <prop key="first">data1</prop>
+            <prop key="second">data2</prop>
+            <prop key="third">data3</prop>
+        </props>
+    </property>
+</bean>
+```
+
+## 七、装配Bean基于注解
+
+- 配置文件命名空间：
+
+  <https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-annotation-config>
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+          https://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          https://www.springframework.org/schema/context/spring-context.xsd">
+  	<!--组件扫描，扫描含有组件的类-->
+      <context:component-scan base-package="entity"></context:component-scan>
+  
+  </beans>
+  ```
+
+- 注入到容器中
+
+  ```java
+  @Service("UserServiceImplAnnotationId")
+  public class UserServiceImplAnnotation implements UserService{
+     .....
+  }
+  ```
+
+  
+
+- @Compenent取代<bean class=""><bean>
+  @Compenent("id")取代<bean id="" class=""><bean>
+
+  SpringMVC中：
+
+  @Repository：dao层
+
+  @Service: service层
+
+  @Controller: web层
+
+  
+
+- 依赖注入，可以给私有字段设置，可以给setter方法设置。
+
+  [xml方法]: #六、Bean属性注入
+
+  普通值： @Value
+
+  引用值：
+
+  - 按照类型注入@Autowired
+
+  - 按照名称注入1
+
+    @Autowired
+
+    @Quaifier("名称")
+
+  - 按照名称注入2
+
+    @Resource("名称")
+
+- 生命周期  
+
+  [xml配置]: #五、Bean生命周期
+
+  
+
+  - 初始化： @PostConstruct
+
+  - 销毁： @PreDestroy
+
+    ```java
+    @Service
+    public class UserServiceImplAnnotationLifeCycle implements UserService {
+    	.....
+        @PostConstruct
+        public void myInit(){
+            System.out.println("初始化");
+        }
+    
+        @PreDestroy
+        public void myDestroy(){
+            System.out.println("销毁");
+        }
+    }
+    
+    ```
+
+    
+
+- 多例
+
+  - @Scope("prototype") 多例
+
+    ```java
+    @Service
+    @Scope("protptype")
+    public class UserServiceImplAnnotation implements UserService{
+       .....
+    }
+    ```
+
+    

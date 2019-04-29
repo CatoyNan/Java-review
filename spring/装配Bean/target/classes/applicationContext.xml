@@ -19,11 +19,58 @@
     <!--<bean id="userServiceId4" class="service.impl.UserServiceImpl" scope="prototype"></bean>-->
 
     <!--生命周期-->
-    <bean id="userServiceId5"
-          class="service.impl.UserServiceImplLifeCycle"
-          init-method="myInit"
-          destroy-method="myDestroy">
-    </bean>
+    <!--<bean id="userServiceId5"-->
+          <!--class="service.impl.UserServiceImplLifeCycle"-->
+          <!--init-method="myInit"-->
+          <!--destroy-method="myDestroy">-->
+    <!--</bean>-->
 
-    <bean class="beanPostProcess.MybeanPostProcesser"></bean>
+    <!--<bean class="beanPostProcess.MybeanPostProcesser"></bean>-->
+
+    <!--bean属性注入-->
+    <!--sertter方法注入-->
+    <!--<bean id="studentId" class="entity.Student">-->
+        <!--&lt;!&ndash;普通数据&ndash;&gt;-->
+        <!--<property name="name" value="小明"></property>-->
+        <!--&lt;!&ndash;引用数据&ndash;&gt;-->
+        <!--<property name="address" ref="addressId"></property>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;注入的对象&ndash;&gt;-->
+    <!--<bean id="addressId" class="entity.Address">-->
+        <!--<property name="home" value="北京"></property>-->
+    <!--</bean>-->
+
+    <!--集合注入-->
+    <!--集合的注入都是给property添加子标签-->
+    <!--普通数据value、引用数据ref-->
+    <bean id="collectionData" class="Data.CollectionData">
+        <property name="listData">
+            <list>
+                <value>first</value>
+                <value>second</value>
+                <value>third</value>
+            </list>
+        </property>
+        <property name="mapData">
+            <map>
+                <entry key="first" value="data1"></entry>
+                <entry key="second" value="data2"></entry>
+                <entry key="third" value="data3"></entry>
+            </map>
+        </property>
+        <property name="setData">
+            <set>
+                <value>first</value>
+                <value>second</value>
+                <value>third</value>
+            </set>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="first">data1</prop>
+                <prop key="second">data2</prop>
+                <prop key="third">data3</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
