@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--目标类-->
+    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+
+    <!--切面类-->
+    <bean id="MySpringAspectId" class="top.caoy.aspect.MySpringAspect"></bean>
+
+    <!--代理类-->
+    <!--*使用工厂bean FactoryBean，底层调用getobject（）返回特殊bean-->
+    <!--*ProxyFactoryBean 用于创建代理工厂bean，生成特殊代理对象-->
+        <!--interfaces：确定接口们-->
+            <!--通过<array>可以设置多个值-->
+            <!--只有一个值时，value=""-->
+        <!--target：确定目标类-->
+        <!--interceptorNames：通知切面类的名称，类型String[]，如果设置一个值,value=""-->
+    <bean id="ProxyUserServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interfaces">
+            <array>
+                <value>top.caoy.service.UserService</value>
+            </array>
+        </property>
+        <property name="target" ref="UserServiceId"></property>
+        <property name="interceptorNames" value="MySpringAspectId"></property>
+    </bean>
+</beans>

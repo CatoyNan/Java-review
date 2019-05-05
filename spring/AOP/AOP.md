@@ -76,7 +76,7 @@ public class MyAspect {
 public class BeanFactory {
    public static UserService creatBean(){
         //目标类
-       final UserService userService = new UserServiceImpl();
+       final UserService userService = new UserServiceImpl();//jdk1.8后默认final
         //切面类
        final MyAspect myAspect = new MyAspect();
         //代理类
@@ -118,7 +118,7 @@ public void test(){
 
 ### 4.2CGLIB
 
-- 没有借口只有实现类
+- 没有接口只有实现类
 - 采用字节码增强框架cglib,在运行时创建子类，从而对目标进行增强。
 - spring-core中已经存在
 
@@ -208,3 +208,169 @@ public void testCjlib(){
  */
 ```
 
+## 五、spring编写代理：半自动
+
+- 让spring创建代理对象，从spring容器中手动获取代理
+
+- 核心jar包
+
+  - 核心4+1
+  - AOP联盟规范
+  - spring-aop
+
+  ![1557047380753](AOP.assets/1557047380753.png)
+
+### 5.1AOP联盟通知类型
+
+![1557047019031](AOP.assets/1557047019031.png)
+
+### 5.2目标类
+
+```java
+public class UserServiceImpl implements UserService {
+    public void addUser() {
+        System.out.println("addUser");
+    }
+
+    public void delUser() {
+        System.out.println("delUser");
+    }
+
+    public void updateUser() {
+        System.out.println("updateUser");
+    }
+}
+```
+
+### 5.3切面
+
+```java
+/**
+ * @description: spring半自动AOP,采用环绕通知
+ * @author: xjn
+ * @create: 2019-05-05 17:14
+ **/
+public class MySpringAspect implements MethodInterceptor {
+    @Override
+    public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+        System.out.println("前方法");
+        Object obj = methodInvocation.proceed();
+        System.out.println("后方法");
+        return obj;
+    }
+}
+```
+
+### 5.4配置文件
+
+![1557055793252](AOP.assets/1557055793252.png)
+
+```xml
+....
+
+    <!--目标类-->
+    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+
+    <!--切面类-->
+    <bean id="MySpringAspectId" class="top.caoy.aspect.MySpringAspect"></bean>
+
+    <!--代理类-->
+    <!--*使用工厂bean FactoryBean，底层调用getobject（）返回特殊bean-->
+    <!--*ProxyFactoryBean 用于创建代理工厂bean，生成特殊代理对象-->
+        <!--interfaces：确定接口们-->
+            <!--通过<array>可以设置多个值-->
+            <!--只有一个值时，value=""-->
+        <!--target：确定目标类-->
+        <!--interceptorNames：通知切面类的名称，类型String[]，如果设置一个值,value=""-->
+    <bean id="ProxyUserServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interfaces">
+            <array>
+                <value>top.caoy.service.UserService</value>
+            </array>
+        </property>
+        <property name="target" ref="UserServiceId"></property>
+        <property name="interceptorNames" value="MySpringAspectId"></property>
+    </bean>
+</beans>
+```
+
+### 5.5测试
+
+```java
+@Test
+public void testSpringAspect(){
+    String path = "applicationContext.xml";
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+    UserService userService =(UserService) applicationContext.getBean("ProxyUserServiceId");
+    userService.delUser();
+}
+    /**
+     * 前方法
+     * delUser
+     * 后方法
+     */
+```
+
+## 六、spring AOP编程:全自动
+
+- 依赖
+
+  ![1557056841529](AOP.assets/1557056841529.png)
+
+  
+
+- 配置文件命名空间：
+
+  <https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-annotation-config>
+
+### 6.1目标类
+
+同上
+
+### 6.2切面
+
+同上
+
+### 6.3配置文件
+
+```xml
+...
+    <!--目标类-->
+    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+
+    <!--切面类-->
+    <bean id="mySpringAspect" class="top.caoy.aspect.MySpringAspect"></bean>
+
+    <!--aop编程-->
+    <!--<aop:config>-->
+        <!--proxy-target-class="true"声明cjlib代理-->
+        <!--<aop:pointcut>切入点-->
+        <!--<advisor>特殊的切面，只有一个通知和一个切入点
+            advice-ref:通知的引用
+            pointcut-ref:切入点的引用-->
+    <!--切入点表达式
+	execution( *             top.caoy.service.impl.*.       *          (..))-->
+  <!--选择方法  返回值任意表  包                     类名任意 方法名任意  参数任意       -->
+<aop:config proxy-target-class="true">
+  <aop:pointcut id="myPointcut" expression="execution(* top.caoy.service.impl.*.*(..))"/>
+  <aop:advisor advice-ref="mySpringAspect" pointcut-ref="myPointcut"/>
+</aop:config>
+```
+
+### 6.4测试
+
+```java
+    @Test
+    public void testSpringAutoAspect(){
+        String path = "applicationContext2.xml";
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
+        UserService userService =(UserService) applicationContext.getBean("UserServiceId");
+        userService.delUser();
+    }
+}
+    /**
+     * 前方法
+     * delUser
+     * 后方法
+     */
+```

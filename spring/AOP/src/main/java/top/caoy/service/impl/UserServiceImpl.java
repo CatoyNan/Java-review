@@ -8,7 +8,7 @@ import top.caoy.service.UserService;
  * @author: xjn
  * @create: 2019-04-30 12:12
  **/
-@Service
+@Service("UserService")
 public class UserServiceImpl implements UserService {
     public void addUser() {
         System.out.println("addUser");

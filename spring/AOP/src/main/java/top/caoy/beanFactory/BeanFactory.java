@@ -16,9 +16,9 @@ import java.lang.reflect.Proxy;
  public class BeanFactory {
    public static UserService creatBean(){
         //目标类
-       final UserService userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl();
         //切面类
-       final MyAspect myAspect = new MyAspect();
+        MyAspect myAspect = new MyAspect();
         //代理类
         UserService userServiceProxy =(UserService) Proxy.newProxyInstance(BeanFactory.class.getClassLoader(),userService.getClass().getInterfaces(), new InvocationHandler() {
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
