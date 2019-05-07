@@ -85,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext2.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="applicationContext2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext2.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
@@ -94,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSpringAutoAspect.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestSpringAutoAspect.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestSpringAutoAspect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="523">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/main/java/top/caoy/aspect/MySpringAspect.java" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/test/java/TestSpringAspect.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestSpringAutoAspect.java" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext2.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/TestSpringAutoAspect.java" />
       </list>
     </option>
   </component>
@@ -181,11 +181,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-218" />
-    <option name="y" value="114" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-149" />
+    <option name="y" value="74" />
     <option name="width" value="1940" />
-    <option name="height" value="1092" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -488,14 +488,11 @@
       <updated>1556595769593</updated>
       <workItem from="1556595773177" duration="6993000" />
       <workItem from="1556612125834" duration="5262000" />
-      <workItem from="1557046511268" duration="9869000" />
+      <workItem from="1557046511268" duration="10549000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSpringAspect_testSpringAspect - 2019.05.05 at 17h 37m 29s.xml">
-      <configuration name="TestSpringAspect.testSpringAspect" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestSpringAspect - 2019.05.05 at 17h 38m 02s.xml">
       <configuration name="TestSpringAspect" configurationId="JUnit" />
     </history-entry>
@@ -523,9 +520,12 @@
     <history-entry file="TestSpringAutoAspect_testSpringAutoAspect - 2019.05.05 at 20h 23m 24s.xml">
       <configuration name="TestSpringAutoAspect.testSpringAutoAspect" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestSpringAutoAspect_testSpringAutoAspect - 2019.05.05 at 20h 30m 39s.xml">
+      <configuration name="TestSpringAutoAspect.testSpringAutoAspect" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22124000" />
+    <option name="totallyTimeSpent" value="22804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="-10" width="1940" height="1100" extended-state="6" />
@@ -541,12 +541,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32991362" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38248336" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38248336" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26457882" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26457882" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -909,20 +909,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestSpringAutoAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="14" column="21" lean-forward="true" selection-end-line="30" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestSpringAutoAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
