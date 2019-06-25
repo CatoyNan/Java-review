@@ -1,4 +1,4 @@
-package proxy;
+package src.proxy;
 
 /**
  * @description: 代理类

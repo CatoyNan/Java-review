@@ -1,4 +1,4 @@
-package proxy;
+package src.proxy;
 
 /**
  * @description: 被代理类实现接口
