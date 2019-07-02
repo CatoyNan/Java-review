@@ -24,8 +24,12 @@
 
 - 权限分配
 
-  ```
-  
+  ```sql
+  grant select,update,delete,insert on test.* to 'catoy'@'%';//给catoy用户赋予test库所有表的增删改查权限
+  grant select on test.* to 'catoy'@'%';//给catoy用户赋予test库所有表的只读权限
+revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权限
+  show grants;//现实当前用户的权限
   ```
 
-  
+![image-20190702110121068](/Users/admin/Library/Application Support/typora-user-images/image-20190702110121068.png)
+
