@@ -33,3 +33,27 @@ revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权�
 
 ![image-20190702110121068](/Users/admin/Library/Application Support/typora-user-images/image-20190702110121068.png)
 
+## 三、字符集管理
+
+- 现实当前字符集规则设置
+
+  ```sql
+  show variables like 'character\_set\_%';
+  ```
+
+  ![image-20190705144718310](/Users/admin/Library/Application Support/typora-user-images/image-20190705144718310.png)
+
+- 设置字符集编码
+
+  ```sql
+  set names 'utf8';//等价于下列三句话
+  
+  set character_set_client = utf8;
+  set character_set_results = utf8;
+  set character_set_connection = utf8;
+  
+  
+  ```
+
+  
+
