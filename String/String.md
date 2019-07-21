@@ -4,13 +4,13 @@
 
 - 这里s1==s3,因为指向同一个值
 
-![1554965538596](Untitled.assets/1554965538596.png)
+![1554965538596](http://ww4.sinaimg.cn/large/006tNc79ly1g4zlks56wlj30q90bhgml.jpg)
 
 - s1==s2//false;       s1.equals(s2)//true
 
-  ![1554968117074](Untitled.assets/1554968117074.png)
+  ![1554968117074](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlkt3gqej30z10bhgmk.jpg)
 
-- ![1555160115796](String.assets/1555160115796.png)
+- ![1555160115796](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlksmnntj30qw0d4q3z.jpg)
 
 ## StringBuffer
 

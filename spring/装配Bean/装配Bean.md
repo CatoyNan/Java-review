@@ -88,7 +88,7 @@ public void testBeanFactory2(){
 
 ## 四、Bean作用域
 
-![1555945136527](装配Bean.assets/1555945136527.png)
+![1555945136527](http://ww1.sinaimg.cn/large/006tNc79ly1g4zljhxzo8j30k80aqq4v.jpg)
 
 ### 4.1配置文件
 
@@ -201,7 +201,7 @@ public void testLifeCicle(){
 
 - 只要实现这个接口(beanPostProcess)，并且将实现类提供给spring容器，在初始化方法前将执行before(),在初始化方法之后将执行after()
 
-![1555986950378](装配Bean.assets/1555986950378.png)
+![1555986950378](http://ww4.sinaimg.cn/large/006tNc79ly1g4zljhj01sj31440ad76u.jpg)
 
 - spring提供工厂钩子用于修改实例，对象可以生成代理对象，是AOP底层
 

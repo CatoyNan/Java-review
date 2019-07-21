@@ -2,7 +2,7 @@
 
 ## 一、简介
 
-- Aspect Oriented Programming​:面向切面编程。
+- Aspect Oriented Programming:面向切面编程。
 
 - 降低耦合度提高可重用性
 
@@ -14,7 +14,7 @@
 
   （性能监视、事物管理、安全检查、缓存）
 
-![1556595558696](AOP.assets/1556595558696.png)
+![1556595558696](http://ww1.sinaimg.cn/large/006tNc79ly1g4zljnwpmbj30t60e4q5o.jpg)
 
 ## 二、AOP实现原理
 
@@ -70,7 +70,7 @@ public class MyAspect {
 
 #### 4.13工厂BeanFacory
 
-![1556604649175](AOP.assets/1556604649175.png)
+![1556604649175](http://ww3.sinaimg.cn/large/006tNc79ly1g4zljrhwplj31210g8wi2.jpg)
 
 ```java
 public class BeanFactory {
@@ -218,11 +218,11 @@ public void testCjlib(){
   - AOP联盟规范
   - spring-aop
 
-  ![1557047380753](AOP.assets/1557047380753.png)
+  ![1557047380753](http://ww1.sinaimg.cn/large/006tNc79ly1g4zljplprpj30k906kab4.jpg)
 
 ### 5.1AOP联盟通知类型
 
-![1557047019031](AOP.assets/1557047019031.png)
+![1557047019031](http://ww1.sinaimg.cn/large/006tNc79ly1g4zljt1rfbj30uh0b00va.jpg)
 
 ### 5.2目标类
 
@@ -263,7 +263,7 @@ public class MySpringAspect implements MethodInterceptor {
 
 ### 5.4配置文件
 
-![1557055793252](AOP.assets/1557055793252.png)
+![1557055793252](http://ww4.sinaimg.cn/large/006tNc79ly1g4zljusylkj30yh0di40y.jpg)
 
 ```xml
 ....
@@ -315,7 +315,7 @@ public void testSpringAspect(){
 
 - 依赖
 
-  ![1557056841529](AOP.assets/1557056841529.png)
+  ![1557056841529](http://ww4.sinaimg.cn/large/006tNc79ly1g4zljvf9b5j30hx076t9y.jpg)
 
   
 

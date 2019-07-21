@@ -31,7 +31,7 @@ revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权�
   show grants;//现实当前用户的权限
   ```
 
-![image-20190702110121068](/Users/admin/Library/Application Support/typora-user-images/image-20190702110121068.png)
+![image-20190702110121068](http://ww2.sinaimg.cn/large/006tNc79ly1g4zliwg7oij30u00ytgxn.jpg)
 
 ## 三、字符集管理
 
@@ -41,7 +41,7 @@ revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权�
   show variables like 'character\_set\_%';
   ```
 
-  ![image-20190705144718310](/Users/admin/Library/Application Support/typora-user-images/image-20190705144718310.png)
+  ![image-20190705144718310](http://ww4.sinaimg.cn/large/006tNc79ly1g4zlivzmuhj30vi0cyju7.jpg)
 
 - 设置字符集编码
 

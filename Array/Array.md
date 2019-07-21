@@ -32,17 +32,17 @@ int[] a = {1,2,3}
 
 ### 3.1元素为基本数据类型
 
-![1555216006921](Array.assets/1555216006921.png)
+![1555216006921](http://ww2.sinaimg.cn/large/006tNc79ly1g4zlidnxe5j30yx0jvdh4.jpg)
 
-![1555216387175](Array.assets/1555216387175.png)
+![1555216387175](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlic5cn1j30o80eqq3q.jpg)
 
 ### 3.2元素为引用类型
 
-![1555216837672](Array.assets/1555216837672.png)
+![1555216837672](http://ww3.sinaimg.cn/large/006tNc79ly1g4zliau9c2j30s00fdaar.jpg)
 
-![1555217032611](Array.assets/1555217032611.png)
+![1555217032611](http://ww3.sinaimg.cn/large/006tNc79ly1g4zlid9drbj30rt0esmy5.jpg)
 
-![1555217167172](Array.assets/1555217167172.png)
+![1555217167172](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlicmky1j30s30evmy7.jpg)
 
 ## 四、数组拷贝
 
@@ -61,7 +61,7 @@ int[] a = {1,2,3}
 //[1, 99, 4, 5]
 ```
 
-![1555339373567](Array.assets/1555339373567.png)
+![1555339373567](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlibn6alj30ug0a7dge.jpg)
 
 ### 4.2 System.arraycopy及其包装方法
 
@@ -180,7 +180,7 @@ int[] a = {1,2,3}
     //array2 = [100, 2, 8, 7, 6]
 ```
 
-![1555340127085](Array.assets/1555340127085.png)
+![1555340127085](http://ww3.sinaimg.cn/large/006tNc79ly1g4zlib7xegj30ot0bl75h.jpg)
 
 #### 4.32引用类型
 
@@ -194,4 +194,4 @@ int[] a = {1,2,3}
   System.out.println(employees2[0]);
   ```
 
-![1555341772495](Array.assets/1555341772495.png)
+![1555341772495](http://ww3.sinaimg.cn/large/006tNc79ly1g4zlie11xsj30sr0d50ux.jpg)
