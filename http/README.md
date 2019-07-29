@@ -1,8 +1,12 @@
 # http——java发送/接收http请求
 
+[ 参考文档]: https://www.yeetrack.com/?p=779
+
+
+
 ## 一、HttpClient
 
-HttpClient类似一个浏览器（不是浏览器），功能是执行一个http方法。
+##### HttpClient类似一个浏览器（不是浏览器），功能是执行一个http方法。
 
 ```java
     CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -15,7 +19,7 @@ HttpClient类似一个浏览器（不是浏览器），功能是执行一个http
     }
 ```
 
-HttpClient提供`URIBuilder`工具类来简化URIs的创建和修改过程。
+##### HttpClient提供`URIBuilder`工具类来简化URIs的创建和修改过程。
 
 ```java
 URI uri = new URIBuilder()
@@ -31,15 +35,28 @@ URI uri = new URIBuilder()
     System.out.println(httpget.getURI());
 ```
 
+##### 设置超时时间
+
+```java
+  	CloseableHttpClient httpclient = HttpClients.createDefault();
+    RequestConfig requestConfig = RequestConfig.custom()
+            .setSocketTimeout(1000)
+            .setConnectTimeout(1000)
+            .build();
+
+    HttpGet httpget1 = new HttpGet("https://www.yeetrack.com/1");
+    httpget1.setConfig(requestConfig);
+```
+
 ## 二、请求头/相应头
 
-增加请求头
+##### 增加请求头
 
 ```java
 response.addHeader("Set-Cookie", "c1=a; path=/; domain=yeetrack.com");
 ```
 
-获取请求头
+##### 获取请求头
 
 ```java
  HttpResponse response = new BasicHttpResponse(HttpVersion.HTTP_1_1, HttpStatus.SC_OK, "OK");
@@ -78,6 +95,50 @@ HttpClient推荐使用`HttpEntity`的`getConent()`方法或者`HttpEntity`的`wr
 ```java
  String entity = EntityUtils.toString(httpResponse.getEntity());
 ```
+
+```java
+/**
+	* 将entity内容转换为字符串
+  */
+public String getEntityContent(HttpEntity entity) throws IOException{
+        InputStream inputStream = entity.getContent();
+        if (inputStream == null) {
+            return null;
+        } else {
+            try {
+                int i = (int) entity.getContentLength();
+                if (i < 0) {
+                    i = 4096;
+                }
+                Charset charset = null;
+                ContentType contentType = ContentType.get(entity);
+                if (contentType != null) {
+                    charset = contentType.getCharset();
+                }
+
+                if (charset == null) {
+                    charset = Charset.forName("utf-8");
+                }
+
+                Reader reader = new InputStreamReader(inputStream, charset);
+                CharArrayBuffer buffer = new CharArrayBuffer(i);
+                char[] tmp = new char[1024];
+
+                int l;
+                while ((l = reader.read(tmp)) != -1) {
+                    buffer.append(tmp, 0, l);
+                }
+
+                String var9 = buffer.toString();
+                return var9;
+            } finally {
+                inputStream.close();
+            }
+        }
+    }
+```
+
+
 
 ##### 表单形式添加实体内容
 

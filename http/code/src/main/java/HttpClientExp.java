@@ -1,7 +1,10 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
@@ -9,12 +12,16 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.Args;
+import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URI;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 
 /**
  * @ClassName HttpClientExp
@@ -166,6 +173,60 @@ public class HttpClientExp {
                 }
             }catch (IOException e){
                 e.printStackTrace();
+            }
+        }
+    }
+
+    @Test
+    public void test() throws IOException{
+        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://m.haihu.com/getSignatureJson?url=https%253A%252F%252Fm.haihu.com%252FproductDetails.html%253FgoodsId%253D1765606");
+        CloseableHttpResponse closeableHttpResponse =  closeableHttpClient.execute(httpGet);
+        HttpEntity entity = closeableHttpResponse.getEntity();
+        System.out.println(getEntityContent(entity));
+
+        }
+
+
+    /**
+     * 将entity内容转换为字符串
+     * @param entity
+     * @return
+     * @throws IOException
+     */
+    public String getEntityContent(HttpEntity entity) throws IOException{
+        InputStream inputStream = entity.getContent();
+        if (inputStream == null) {
+            return null;
+        } else {
+            try {
+                int i = (int) entity.getContentLength();
+                if (i < 0) {
+                    i = 4096;
+                }
+                Charset charset = null;
+                ContentType contentType = ContentType.get(entity);
+                if (contentType != null) {
+                    charset = contentType.getCharset();
+                }
+
+                if (charset == null) {
+                    charset = Charset.forName("utf-8");
+                }
+
+                Reader reader = new InputStreamReader(inputStream, charset);
+                CharArrayBuffer buffer = new CharArrayBuffer(i);
+                char[] tmp = new char[1024];
+
+                int l;
+                while ((l = reader.read(tmp)) != -1) {
+                    buffer.append(tmp, 0, l);
+                }
+
+                String var9 = buffer.toString();
+                return var9;
+            } finally {
+                inputStream.close();
             }
         }
     }
