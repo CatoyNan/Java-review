@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/Users/admin/Desktop/hello.log" />
+        <param name="append" value="true" />
+        <param name="encoding" value="UTF-8" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c{10}] - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info"/>
+            <param name="levelMax" value="info"/>
+            <param name="AcceptOnMatch" value="true"/>
+        </filter>
+    </appender>
+
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%c{10}] - %m%n" />
+        </layout>
+    </appender>
+
+    <!--
+       1. 指定logger的设置，additivity是否遵循缺省的继承机制
+       2. 当additivity="false"时，root中的配置就失灵了，不遵循缺省的继承机制
+   -->
+    <logger name="com.catoy.Exp1" additivity="false">
+        <level value="error" />
+        <appender-ref ref="file" />
+        <appender-ref ref="Console"/>
+    </logger>
+    
+    <root>
+        <level value="info"/>
+        <appender-ref ref="Console"/>
+    </root>
+
+</log4j:configuration>
