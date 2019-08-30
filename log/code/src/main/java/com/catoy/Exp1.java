@@ -22,7 +22,6 @@ public class Exp1 {
         logger.error("error");
 
         logger.fatal("fatal");
-
     }
 }
 
