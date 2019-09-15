@@ -98,5 +98,3 @@ SELECT * FROM websites LIMIT 0,3
     ```sql
     select t1.* from t1 left join t2 on t1.i1=t2.i2 where t2.i2 is null
     ```
-
-    
