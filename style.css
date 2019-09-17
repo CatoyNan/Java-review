@@ -46,18 +46,18 @@ body {
 .swiper-slide {
     width: 400px !important;
 }
-.swiper-slide:nth-child(1) .sliderText{
+.swiper-slide .blue{
     background: #2196f3;
 }
-.swiper-slide:nth-child(2) .sliderText{
+.swiper-slide .red{
     background: #e91e63;
 }
-.swiper-slide:nth-child(3) .sliderText{
+.swiper-slide .yellow{
     background: #c3d41a;
 }
-.swiper-slide:nth-child(4) .sliderText{
+.swiper-slide .oriage{
     background: #ff9800;
 }
-.swiper-slide:nth-child(5) .sliderText{
+.swiper-slide .purple{
     background: #c33ada;
 }
