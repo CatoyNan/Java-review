@@ -23,14 +23,13 @@
                 async: false,
                 type: "POST",
                 url: "http://catoy.top:8080/github",
-                data: "{\"data\":{},\"heads\":{},\"url\":\"https://github.com/CatoyNan/Java-review\"}",
+                data: "{\"data\":{},\"heads\":{},\"url\":\"http://github.com/CatoyNan/Java-review\"}",
                 timeout: 3000,
                 contentType: "application/json",
                 headers: {},
                 beforeSend() {},
                 success: function (data) {
                     listData = data.data;
-                    for (var i = 0; i < listData.length; i++) {}
                     $(listData).each(function (i) {
                         $(".swiper-wrapper").append($(
                             "<div class='swiper-slide'><div class='card'><div class='sliderText'><h3>" +
