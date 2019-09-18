@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName Exp4
- * @Description 加锁与可见性
+ * @Description 错误代码
  * @Author admin
  * @Date 2019-07-30 09:24
  * @Version 1.0

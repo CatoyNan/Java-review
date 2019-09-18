@@ -19,7 +19,7 @@ public class Exp2 implements Watcher {
         cd.await();
         long sessionId = zk.getSessionId();
         byte[] passwd = zk.getSessionPasswd();
-        zk = new ZooKeeper("localhost:2181", 5000, new Exp2(), 1L, "haha".getBytes());
+//        zk = new ZooKeeper("localhost:2181", 5000, new Exp2(), 1L, "haha".getBytes());
         zk = new ZooKeeper("localhost:2181", 5000, new Exp2(), sessionId, passwd);
         Thread.sleep(Integer.MAX_VALUE);
     }

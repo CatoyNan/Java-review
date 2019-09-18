@@ -2,6 +2,11 @@
 
 ### 创建一个基本的zookeeper会话实例
 
+```shell
+#启动服务
+sudo ./zkServer.sh start  ../conf/zoo-1.cfg
+```
+
 ```java
 /**
  * @ClassName Exp1

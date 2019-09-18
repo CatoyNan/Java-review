@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName Exp3
- * @Description TODO
+ * @Description 脏读例子
  * @Author admin
  * @Date 2019-07-28 16:27
  * @Version 1.0

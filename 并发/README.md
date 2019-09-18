@@ -65,6 +65,38 @@ atomic下的类只能做到单个变量的原子性，若需要同时保持多�
 
 ![image-20190914195303786](http://ww2.sinaimg.cn/large/006y8mN6gy1g6zaiopoz8j30wu0oggog.jpg)
 
+### 四、发布对象
+
+要安全发布对象，首先需要了解两个知识点：
+
+- 什么是对象的发布：是一个对象能够被当前范围之外的代码所使用。
+- 什么是对象的溢出：一个对象还没构造完成就被其他线程所见。
+
+发布对象有很多种方法如：
+
+1. 将对象的引用保存到一个公有的静态变量红中`public static Set<Secret> knownSecret;`
+
+2. 将一个对象添加到集合中 `knownSecrets = new HashSet<Secret>();knownSecrets.add(new Secret());`
+
+3. 非私有方法返回一个引用
+
+4. 发布一个内部类实例（this溢出）
+
+   ```java
+   public class ThisEscape {
+   	public ThisEscape(EventSource source){
+   		source.registerListener{
+   			new EventListener({
+   				public void onEvent(event e){
+   					doSomething(e);
+   				}
+   			});
+   		}
+   }
+   ```
+
+   
+
 ### 一、synchronized
 
 #### 1.1使用方法
@@ -95,11 +127,11 @@ public class exp1 {
 
 ```
 
-#### 1.2一个synchronized 代码块是原子操作不可分
+##### 一个synchronized 代码块是原子操作不可分
 
-#### 1.3同步方法和非同方法是否可以同时调用———可以
+##### 同步方法和非同方法是否可以同时调用———可以
 
-#### 1.4发生异常，锁默认会被释放，除非try catch
+##### 发生异常，锁默认会被释放，除非try catch
 
 加了synchronized的方法和不加synchronized互不影响。只有加有synchronized关键字的方法才需要去申请锁。
 
@@ -193,6 +225,7 @@ Thread-1m2 end...
 ##### 1.42情况二
 
 - 子类同步方法调用父类中的同步方法—>可以
+- 如果子类方法是重写父类的方法，并且都是同步方法—>可以,他们持有的是子类的锁(重入)
 
 ### 二、脏度数据
 
@@ -214,7 +247,7 @@ public class Exp3 {
         this.balance = balance;
     }
 
-    public synchronized long getBalance(){
+    public long getBalance(){
         System.out.println("读取数据");
         return this.balance;
     }
@@ -294,3 +327,6 @@ public class Exp3 {
 1000
 ```
 
+### volatile
+
+volatile只保证可见性，不保证原子性。当一个变量被volatile修饰时，该变量在工作内存中是无效的，当一个共享变量被某个线程修改后，他会直接被更新到主内存中。其他线程若想读取该变量，会直接从主内存当中读取。

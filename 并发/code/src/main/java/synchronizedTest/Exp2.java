@@ -2,7 +2,7 @@ package synchronizedTest;
 
 /**
  * @ClassName Exp2
- * @Description TODO
+ * @Description synchronized实现同步
  * @Author admin
  * @Date 2019-07-28 15:43
  * @Version 1.0
