@@ -1,4 +1,4 @@
-package decorator;
+package src.decorator;
 
 /**
  * @ClassName Client

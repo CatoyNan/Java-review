@@ -1,4 +1,4 @@
-package simpleFactory;
+package src.simpleFactory;
 
 /**
  * @ClassName Client

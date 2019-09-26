@@ -1,4 +1,4 @@
-package decorator;
+package src.decorator;
 
 /**
  * 流的抽象组件

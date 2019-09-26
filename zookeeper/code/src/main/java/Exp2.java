@@ -6,7 +6,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @ClassName Exp2
- * @Description 创建一个基本的zookeeper对象，复用sessionId和session passwd
+ * @Description 创建一个基本的zookeeper对象，复用sessionId和session passwd，由于zkClient的重连机制，第一个zk和第三个zk会交替重连
  * @Author admin
  * @Date 2019-08-30 14:49
  * @Version 1.0

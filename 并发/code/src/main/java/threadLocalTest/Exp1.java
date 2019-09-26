@@ -9,7 +9,7 @@ package threadLocalTest;
  **/
 public class Exp1 {
     //用一个静态的变量来记录ThreadLocal对象,方法在任何地方法直接调用
-    public static ThreadLocal<String> local = new ThreadLocal<>();
+    private static ThreadLocal<String> local = new ThreadLocal<>();
 
     public static void main(String[] args) {
         new Thread(() -> {
