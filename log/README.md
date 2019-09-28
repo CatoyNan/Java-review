@@ -25,7 +25,7 @@
   ```txt
   log4j.logger.packge.className=lever,hello.File,hello.Console
   
-  logtj.logger.packge.name=lever,hello.File,hello.Console
+  log4j.logger.packge.name=lever,hello.File,hello.Console
   private static final Logger logger = Logger.getLogger("name");
   
   log4j.rootLogger=lever,hello.File,hello.File
