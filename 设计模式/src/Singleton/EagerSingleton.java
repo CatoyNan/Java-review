@@ -14,7 +14,7 @@ public class EagerSingleton {
 
     }
 
-    private EagerSingleton init(){
+    private static EagerSingleton init(){
         return eagerSingleton;
     }
 }

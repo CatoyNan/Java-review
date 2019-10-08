@@ -2,14 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae39f89d-e364-4d31-8215-ec9d8e38e63e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/FilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/helloDemo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/src/main/java/top/catoy/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/commonUnsafe/StringBufferTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/commonUnsafe/StringBuilderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/ThreadLocalRequestHandle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/controller/ThreadLocalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/filter/ThreadLocalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../String/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../String/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../log/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../log/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../maven/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/Filter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/Filter/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/Filter/code/src/main/java/top/catoy/filter/config/FilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/Filter/code/src/main/java/top/catoy/filter/config/FilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../并发/code/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../并发/code/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../并发/code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/ConcurrencyTest/ConcurrencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/ConcurrencyTest/ConcurrencyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/threadLocalTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/Exp1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Singleton/LazySingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Singleton/LazySingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,19 +55,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorator/BufferedInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="41" column="11" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="41" selection-end-column="11" />
+            <state relative-caret-position="600">
+              <caret line="40" column="5" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,19 +67,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Component.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="45">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <folding>
+                <element signature="e#243#244#0" expanded="true" />
+                <element signature="e#279#280#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Decorator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <folding>
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="630">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,34 +141,11 @@
         <entry file="file://$PROJECT_DIR$/src/Singleton/EagerSingleton.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="18" column="5" selection-start-line="16" selection-start-column="2" selection-end-line="18" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorator/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorator/PushBackInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/BufferedInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding>
+                <element signature="e#323#324#0" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,9 +248,14 @@
         <option value="$PROJECT_DIR$/decorator/FilterInputStream.java" />
         <option value="$PROJECT_DIR$/decorator/PushBackInputStream.java" />
         <option value="$PROJECT_DIR$/src/decorator/BufferedInputStream.java" />
-        <option value="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" />
         <option value="$PROJECT_DIR$/src/Singleton/LazySingleton.java" />
+        <option value="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" />
         <option value="$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java" />
+        <option value="$PROJECT_DIR$/src/test/decoratorTest/Component.java" />
+        <option value="$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java" />
+        <option value="$PROJECT_DIR$/src/test/decoratorTest/Decorator.java" />
+        <option value="$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java" />
+        <option value="$PROJECT_DIR$/src/test/decoratorTest/Client.java" />
       </list>
     </option>
   </component>
@@ -229,12 +283,6 @@
               <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
               <item name="设计模式" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Singleton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +342,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LazySingletonThreadSafe">
+  <component name="RunManager" selected="Application.Client (2)">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.proxy.Client" />
       <module name="设计模式" />
@@ -308,12 +356,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="decorator.Client" />
+    <configuration name="Client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.test.decoratorTest.Client" />
       <module name="设计模式" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="decorator.*" />
+          <option name="PATTERN" value="src.test.decoratorTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -321,12 +369,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.proxy.simpleFactory.Client" />
+    <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="decorator.Client" />
       <module name="设计模式" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.proxy.simpleFactory.*" />
+          <option name="PATTERN" value="decorator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -369,11 +417,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (2)" />
         <item itemvalue="Application.LazySingletonThreadSafe" />
         <item itemvalue="Application.LazySingleton" />
         <item itemvalue="Application.Client (3)" />
         <item itemvalue="Application.Client (1)" />
-        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -396,18 +444,18 @@
       <workItem from="1568016699865" duration="3735000" />
       <workItem from="1568090917246" duration="535000" />
       <workItem from="1569074623509" duration="4451000" />
-      <workItem from="1569660781963" duration="2037000" />
+      <workItem from="1569660781963" duration="2524000" />
+      <workItem from="1570075605752" duration="1984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22127000" />
+    <option name="totallyTimeSpent" value="24598000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="810" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28183118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2160229" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -416,8 +464,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.3286908" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.32729805" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972144" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -610,6 +658,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/decorator/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -680,37 +735,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Singleton/EagerSingleton.java">
+    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="5" selection-start-line="16" selection-start-column="2" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="630">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+    <entry file="file://$PROJECT_DIR$/src/Singleton/EagerSingleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="41" column="11" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="41" selection-end-column="11" />
+        <state relative-caret-position="600">
+          <caret line="40" column="5" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Component.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Decorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>

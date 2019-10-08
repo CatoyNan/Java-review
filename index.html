@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="swiper.min.css">
         <script src="swiper.min.js"></script>
@@ -21,11 +22,12 @@
             var listData = [];
             $.ajax({
                 async: false,
-                type: "POST",
-                url: "http://catoy.top:8080/github",
-                data: "{\"data\":{},\"heads\":{},\"url\":\"http://github.com/CatoyNan/Java-review\"}",
+                type: "GET",
+                url: "http://localhost:8080/hello",
+                // data: "{\"data\":{},\"heads\":{},\"url\":\"http://github.com/CatoyNan/Java-review\"}",
                 timeout: 3000,
-                contentType: "application/json",
+                contentType: "text/html",
+                Origin: "https://github.com/CatoyNan/Java-review",
                 headers: {},
                 beforeSend() {},
                 success: function (data) {
