@@ -14,7 +14,7 @@
 
 ## StringBuffer
 
-- 线程安全,内部有所机制，详见并发目录
+- 线程安全,内部有锁机制，详见并发目录
 - 可变的字符串序列
 
 #### 练习
@@ -107,3 +107,14 @@ public class RemoveSpace {
 
 ```
 
+
+
+
+
+## String各种转换
+
+### 字符串转int数组
+
+```java
+"你好".chars().toArray())
+```

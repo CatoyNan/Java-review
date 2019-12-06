@@ -18,18 +18,18 @@ import java.util.Date;
  **/
 @Configuration
 public class ThreadLocalFilter {
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
-        Filter filter = (servletRequest, servletResponse, filterChain) -> {
-            System.out.println("do filter");
-            ThreadLocalRequestHandle.add(String.valueOf(new Date().getTime()));
-            filterChain.doFilter(servletRequest,servletResponse);
-        };
-        filterRegistrationBean.setFilter(filter);
-        filterRegistrationBean.addUrlPatterns("/*");
-        filterRegistrationBean.setName("ThreadLocalFilter");
-        return filterRegistrationBean;
-    }
+//    @Bean
+//    public FilterRegistrationBean filterRegistrationBean() {
+//        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+//        Filter filter = (servletRequest, servletResponse, filterChain) -> {
+//            System.out.println("do filter");
+//            ThreadLocalRequestHandle.add(String.valueOf(new Date().getTime()));
+//            filterChain.doFilter(servletRequest,servletResponse);
+//        };
+//        filterRegistrationBean.setFilter(filter);
+//        filterRegistrationBean.addUrlPatterns("/*");
+//        filterRegistrationBean.setName("ThreadLocalFilter");
+//        return filterRegistrationBean;
+//    }
 
 }

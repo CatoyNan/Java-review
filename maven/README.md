@@ -30,4 +30,12 @@
 
 ### maven中的常见标签
 
+| 标签            | 功能                    |
+| --------------- | ----------------------- |
+| sourceDirectory | maven编译目录(java)     |
+| resources       | 静态资源目录(resources) |
+|                 |                         |
+
+
+
 ##### `<resource>` todo

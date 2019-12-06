@@ -132,7 +132,7 @@ Spring的`DispatcherServlet`使用了特殊的bean来处理请求、渲染视图
 
 | bean的类型                                                   | 作用                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| [`HandlerMapping`](https://spring-mvc.linesh.tw/publish/21-4/handler-mappings.html) | 处理器映射。它会根据某些规则将进入容器的请求映射到具体的处理器以及一系列前处理器和后处理器（即处理器拦截器）上。具体的规则视`HandlerMapping`类的实现不同而有所不同。其最常用的一个实现支持你在控制器上添加注解，配置请求路径。当然，也存在其他的实现。 |
+| [`HandlerMapping`](https://spring-mvc.linesh.tw/publish/21-4/handler-mappings.html) | 处理器映射。它会根据某些规则将进入容器的请求映射到具体的处理器以及一系列前处理器和后处理器（即处理器拦截器）上。具体的规则视`HandlerMapping`类的实现不同而有所不同。其最常用的一个实现支持你在控制器上添加注解，配置请求路径。当然，也存在其他的实现。(就是找到Controller层具体的某个方法) |
 | `HandlerAdapter`                                             | 处理器适配器。拿到请求所对应的处理器后，适配器将负责去调用该处理器，这使得`DispatcherServlet`无需关心具体的调用细节。比方说，要调用的是一个基于注解配置的控制器，那么调用前还需要从许多注解中解析出一些相应的信息。因此，`HandlerAdapter`的主要任务就是对`DispatcherServlet`屏蔽这些具体的细节。 |
 | [`HandlerExceptionResolver`](https://spring-mvc.linesh.tw/publish/21-11/1-handler-exception-handler.html) | 处理器异常解析器。它负责将捕获的异常映射到不同的视图上去，此外还支持更复杂的异常处理代码。 |
 | [`ViewResolver`](https://spring-mvc.linesh.tw/publish/21-5/resolving-views.html) | 视图解析器。它负责将一个代表逻辑视图名的字符串（String）映射到实际的视图类型`View`上。 |
@@ -143,9 +143,41 @@ Spring的`DispatcherServlet`使用了特殊的bean来处理请求、渲染视图
 
 
 
+### springMVC注解驱动
 
+适用版本3.1+
 
+applicationContext.xml可替换成java文件
+
+```java
+@Configuration
+@EnableWebMvc//激活webmvc组件
+public class WebMvcConfig extends WebMvcConfigurerAdapter {//最新是直接实现WebMvcConfigurer接口
+    @Bean
+    public ViewResolver viewResolver(){
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setPrefix("/WEB-INF/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry interceptorRegistry) {
+
+    }
+}
 ```
 
-```
+
+
+
+
+
+
+
+
+### 父子容器
+
+https://zhuanlan.zhihu.com/p/69029697
 

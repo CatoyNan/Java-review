@@ -2,11 +2,13 @@
 
 
 
+![image-20191112110846869](/Users/admin/Desktop/document/学习/Java-review/异常/assets/image-20191112110846869.png)
 
 
 
+**可检查异常**：在正确的程序运行过程中，很容易出现的、情理可容的异常状况，在一定程度上这种异常的发生是可以预测的，并且一旦发生该种异常，就必须采取某种方式进行处理。强制让你try-catch 或 throw
 
-
+**不可检查异常**：包括RuntimeException及其子类和Error。
 
 
 

@@ -18,18 +18,18 @@ import javax.servlet.http.HttpServletResponse;
  **/
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(handlerInterceptor()).addPathPatterns("/**");
-    }
-
-    public HandlerInterceptor handlerInterceptor() {
-       return new HandlerInterceptor(){
-            @Override
-            public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-                System.out.println("afterCompletion remove");
-                ThreadLocalRequestHandle.remove();
-            }
-        };
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(handlerInterceptor()).addPathPatterns("/**");
+//    }
+//
+//    public HandlerInterceptor handlerInterceptor() {
+//       return new HandlerInterceptor(){
+//            @Override
+//            public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+//                System.out.println("afterCompletion remove");
+//                ThreadLocalRequestHandle.remove();
+//            }
+//        };
+//    }
 }
