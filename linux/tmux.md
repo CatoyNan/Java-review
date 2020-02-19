@@ -1,0 +1,1 @@
+- `tmux lstmux kill-session -a`只保留当前session。删除当前session `tmux kill-session -t py27`

@@ -1,3 +1,7 @@
+![1556282896777](http://ww1.sinaimg.cn/large/006tNc79ly1g4zlklrhbdj30zu0hhads.jpg)
+
+# 一、log4j
+
 ## 一、主要组件
 
 - Appenders: 输出源,日志要输出的位子
@@ -166,5 +170,5 @@ log4j.appender.im.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 
 
-### 
+#二、slf4j 
 
