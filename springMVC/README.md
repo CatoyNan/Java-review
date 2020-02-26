@@ -148,7 +148,7 @@ Spring的`DispatcherServlet`使用了特殊的bean来处理请求、渲染视图
 | [`MultipartResolver`](https://spring-mvc.linesh.tw/publish/21-10/springs-multipart-file-upload-support.html) | 解析multi-part的传输请求，比如支持通过HTML表单进行的文件上传等。 |
 | [`FlashMapManager`](https://spring-mvc.linesh.tw/publish/21-6/using-flash-attributes.html) | FlashMap管理器。它能够存储并取回两次请求之间的`FlashMap`对象。后者可用于在请求之间传递数据，通常是在请求重定向的情境下使用。 |
 
-![unnamed](/Users/admin/Desktop/document/学习/Java-review/springMVC/assets/unnamed.jpg)
+![unnamed](./assets/unnamed.jpg)
 
 ### springMVC注解驱动
 
