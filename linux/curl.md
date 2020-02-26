@@ -12,6 +12,8 @@
 
 - 发送post请求传递json
 
+- --socks5-hostname  socks代理
+
   ```shell
   curl -H "Content-Type:application/json" -X POST --data '[{"index":["*"],"preference":"1503652289983","ignore_unavailable":"true"},{"sort":[{"timestamp":{"order":"desc"}}],"query":{"must_not":[],"bool":{"must":[{"query_string":{"query":"cluster"}},{"range":{"timestamp":{"gte":"1503667558137","lte":"1503667558137"}}}]}},"from":"0","size":"500","version":"true"}]' http://212.35.247.184:18080
   ```

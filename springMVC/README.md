@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: ipic
+---
+
 ### 前身:servlet
 
 ![image-20191004213215931](http://ww3.sinaimg.cn/large/006y8mN6ly1g7mhsaeshsj31m00pmal7.jpg)
@@ -80,13 +84,16 @@ web相关包都依赖spring-webmvc,所以只要引入这一个包就够了
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
+		<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:applicationContext.xml</param-value><!--根容器（dao...）-->
+		</context-param>
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/applicationContext.xml</param-value>
+            <param-value>/WEB-INF/applicationContext.xml</param-value><!--子容器 (ViewResovler)-->
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -99,7 +106,7 @@ web相关包都依赖spring-webmvc,所以只要引入这一个包就够了
 
 
 
-##### applicationContext.xml
+##### applicationContext.xml(子容器)
 
 包扫描，bean的注入，视图解析器...
 
@@ -141,7 +148,7 @@ Spring的`DispatcherServlet`使用了特殊的bean来处理请求、渲染视图
 | [`MultipartResolver`](https://spring-mvc.linesh.tw/publish/21-10/springs-multipart-file-upload-support.html) | 解析multi-part的传输请求，比如支持通过HTML表单进行的文件上传等。 |
 | [`FlashMapManager`](https://spring-mvc.linesh.tw/publish/21-6/using-flash-attributes.html) | FlashMap管理器。它能够存储并取回两次请求之间的`FlashMap`对象。后者可用于在请求之间传递数据，通常是在请求重定向的情境下使用。 |
 
-
+![unnamed](/Users/admin/Desktop/document/学习/Java-review/springMVC/assets/unnamed.jpg)
 
 ### springMVC注解驱动
 
@@ -180,4 +187,29 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {//最新是直接实�
 ### 父子容器
 
 https://zhuanlan.zhihu.com/p/69029697
+
+​	web容器(tomcat)，为web应用提供了一个全局上下文`ServletContext`。web.xml中定义了一个`contextLoaderListener`,当web容器启动时,会出发这个监听器，并调用`contextInitialized`方法。该方法会初始化一个根容器即`WebApplicationContext`。加载的配置文件路径由`<context-param>`定义：
+
+```xml
+<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:applicationContext.xml</param-value><!--根容器（dao...）-->
+</context-param>
+```
+
+`WebApplicationContext`以`ROOTWEBAPPLICATIONCONTEXTATTRIBUTE`为key属性被存储在`ServletContext`中。
+
+​	之后web.xml中配置的servlet会被初始化，每个servlet都可以配置自己的ioc容器,里面可以定义处理映射器、视图解析器等：
+
+```xml
+<servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+</servlet>
+```
 

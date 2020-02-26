@@ -17,7 +17,7 @@
 | (?:*pattern*)                 | (正向从左往右)配 *pattern* 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。这对于用"or"字符 (\|) 组合模式部件的情况很有用。例如，'industr(?:y\|ies) 是比 'industry\|industries' 更经济的表达式。https://zhuanlan.zhihu.com/p/60052611?utm_source=qq&utm_medium=social&utm_oi=879631989861404672 |
 | (?=*pattern*)                 | (从左往右)执行正向预测先行搜索的子表达式，该表达式匹配处于匹配 *pattern* 的字符串的起始点的字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，'Windows (?=95\|98\|NT\|2000)' 匹配"Windows 2000"中的"Windows"，但不匹配"Windows 3.1"中的"Windows"。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。<font color='red'>注意：先行断言的执行步骤是这样的先从要匹配的字符串中的最右端找到第一个 ing (也就是先行断言中的表达式)然后 再匹配其前面的表达式，若无法匹配则继续查找第二个 ing 再匹配第二个 ing 前面的字符串，若能匹配则匹配，符合正则的贪婪性。例如： .*(?=ing) 可以匹配 “cooking singing” 中的 “cooking sing” 而不是 cook</font> |
 | (?!*pattern*)                 | (从左往右)执行反向预测先行搜索的子表达式，该表达式匹配不处于匹配 *pattern* 的字符串的起始点的搜索字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，'Windows (?!95\|98\|NT\|2000)' 匹配"Windows 3.1"中的 "Windows"，但不匹配"Windows 2000"中的"Windows"。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。 |
-| (?<=pattern)                  | (从右往左)配pattern之后的字符串                              |
+| (?<=pattern)                  | (从右往左)配pattern之后的字符串(pattern 使用*，+会报错，需要使用{a,b}代替) |
 | (?<！pattern)                 | (从右往左)pattern之后是否成立，不成立则匹配                  |
 | (?<=pattern)something(?=exp1) | \b\w+(?=ing\b)something正向匹配满足exp1 反向匹配满足exp2     |
 | *x*\|*y*                      | 匹配 *x* 或 *y*。例如，'z\|food' 匹配"z"或"food"。'(z\|f)ood' 匹配"zood"或"food"。 |
