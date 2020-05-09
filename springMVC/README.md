@@ -209,3 +209,17 @@ https://zhuanlan.zhihu.com/p/69029697
 </servlet>
 ```
 
+
+
+### web.xml加载顺序
+
+ context-param -> listener -> filter -> servlet 
+
+```
+<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.xml</param-value>
+</context-param>
+```
+
+在web.xml中配置log4j配置文件时，junit测试类会无法加载配置文件，因为运行测试类，不会去启动servlet容器，context-param也不会被加载。

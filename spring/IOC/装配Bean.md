@@ -1,4 +1,4 @@
-# 装配Bean
+# IOC
 
 ## 一、实例化Bean
 
@@ -6,7 +6,9 @@
 
 - 3种bean实例化方法，默认构造、静态工厂、实例工厂
 
-#### 1.11默认构造
+#### 1.11默认
+
+#### 构造
 
 ```xml
 //默认无参构造函数
@@ -15,7 +17,7 @@
 
 
 
-#### 1.12静态工厂
+#### 1.12静态工厂（工厂方法模式）
 
 - 用于整合其他框架或工具
 - 静态工厂：用于生成实例对象，所有的方法必须是static
@@ -23,12 +25,12 @@
 ```xml
 <!--<Bean id="" class="工厂全限定类名" factory-method="静态方法">-->
 <!--将静态工厂创建的实例交给spring-->
-<bean id="myBeanFactoryId" class="BeanFacoty.MyBeanFacory" factory-method="createServie"></bean>
+<bean id="myFactoryBeanId" class="FacotyBean.MyFacoryBean" factory-method="createServie"></bean>
 ```
 
 ```java
 //静态工厂类
-public class MyBeanFacory {
+public class MyFacoryBean {
     public static UserService createServie(){
         return new UserServiceImpl();
     }
@@ -36,7 +38,7 @@ public class MyBeanFacory {
 ```
 
 ```java
-public class TestBeanFactory {
+public class TestFactoryBean {
     @Test
     public void testBeanFactory(){
         String path = "applicationContext.xml";
@@ -54,14 +56,14 @@ public class TestBeanFactory {
 ```xml
 <!--将实例工厂创建的实例交给spring-->
 <!--创建工厂实例-->
-<bean id="myBeanFactoryId2" class="BeanFacoty.MyBeanFacory2"></bean>
+<bean id="myFactoryBeanId2" class="FacotyBean.MyFacoryBean2"></bean>
 <!--获得工厂创建的实例-->
-<bean id="userServiceid" factory-bean="myBeanFactoryId2" factory-method="createService"></bean>
+<bean id="userServiceid" factory-bean="myFactoryBeanId2" factory-method="createService"></bean>
 ```
 
 ```java
 //实例工厂
-public class MyBeanFacory2 {
+public class MyFacoryBean2 {
     public UserService createService(){
         return new UserServiceImpl();
     }
@@ -475,3 +477,13 @@ public class MybeanPostProcesser implements BeanPostProcessor {
     ```
 
     
+
+## 八、容器的初始化过程
+
+- 容器的接口BeanFactory
+
+以ClassPathXmlApplicationContext为例
+
+- refresh();
+  - Preparefresh();
+  - obtaionFreshBeanfactory();

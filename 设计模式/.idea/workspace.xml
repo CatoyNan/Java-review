@@ -2,45 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae39f89d-e364-4d31-8215-ec9d8e38e63e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/FilterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/InterceptorAndFilter/src/main/java/top/catoy/interceptorandfilter/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/helloDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/src/main/java/top/catoy/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../springMVC/helloDemo/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/commonUnsafe/StringBufferTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/commonUnsafe/StringBuilderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/ThreadLocalRequestHandle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/controller/ThreadLocalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/filter/ThreadLocalFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/interceptor/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../String/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../String/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../maven/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/Filter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/Filter/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/Filter/code/src/main/java/top/catoy/filter/config/FilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/Filter/code/src/main/java/top/catoy/filter/config/FilterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/ConcurrencyTest/ConcurrencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/ConcurrencyTest/ConcurrencyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/executorTest/Exp3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/executorTest/Exp3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/synchronizedTest/Exp5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/synchronizedTest/Exp5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../并发/code/src/main/java/threadLocalTest/Exp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../并发/code/src/main/java/catoy/threadLocalTest/Exp1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Singleton/EagerSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatis/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/BeanFacoty/MyBeanFacory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/BeanFacoty/MyBeanFacory2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/Data/CollectionData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/annotationLifeCycle/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/annotationLifeCycle/impl/UserServiceImplAnnotationLifeCycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/annotationTest/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/annotationTest/UserServiceImplAnnotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/beanPostProcess/MybeanPostProcesser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/dao/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/entity/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/entity/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/java/service/impl/UserServiceImplLifeCycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/main/resources/applicationContext2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/AnnotationLifeCycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/AnnotationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/TestBeanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/TestCollectionDi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/TestDi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/TestLifeCicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/src/test/java/TestScope.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/BeanFacoty/MyBeanFacory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/BeanFacoty/MyBeanFacory2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/dao/impl/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/classes/service/impl/UserServiceImplLifeCycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/test-classes/TestBeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/test-classes/TestLifeCicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/target/test-classes/TestScope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/装配Bean.assets/1555945136527.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/装配Bean.assets/1555986950378.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/装配Bean.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/装配Bean/装配Bean.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springMVC/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVC/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springMVC/spring-mvc-demo" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVC/spring-mvc-demo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/代理.md" beforeDir="false" afterPath="$PROJECT_DIR$/代理.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,68 +68,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingleton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="5" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Component.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-              <folding>
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#279#280#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Decorator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#276#277#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#388#389#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-              <folding>
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -126,9 +77,72 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proxy/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/proxy/ProxTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="16" selection-start-line="16" selection-end-line="67" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+                <element signature="e#1120#1121#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1218#1219#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1316#1317#0" expanded="true" />
+                <element signature="e#1364#1365#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proxy/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/Method.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="483" column="18" selection-start-line="483" selection-start-column="18" selection-end-line="483" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proxy/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="615">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,10 +156,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -226,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/proxy/UserService.java" />
         <option value="$PROJECT_DIR$/src/proxy/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/proxy/InvocationHandler.java" />
         <option value="$PROJECT_DIR$/src/proxy/MyInvocationHandler.java" />
@@ -256,6 +265,9 @@
         <option value="$PROJECT_DIR$/src/test/decoratorTest/Decorator.java" />
         <option value="$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java" />
         <option value="$PROJECT_DIR$/src/test/decoratorTest/Client.java" />
+        <option value="$PROJECT_DIR$/src/test/proxy/proxTest.java" />
+        <option value="$PROJECT_DIR$/src/proxy/UserService.java" />
+        <option value="$PROJECT_DIR$/src/test/proxy/ProxTest.java" />
       </list>
     </option>
   </component>
@@ -270,7 +282,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -286,38 +297,28 @@
             </path>
             <path>
               <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="proxy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="设计模式" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="decoratorTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,6 +326,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -342,20 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client (2)">
-    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.proxy.Client" />
-      <module name="设计模式" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.proxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ProxTest">
     <configuration name="Client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.test.decoratorTest.Client" />
       <module name="设计模式" />
@@ -378,13 +367,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src1.proxy.Client" />
-      <module name="设计模式" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -415,13 +397,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProxTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.test.proxy.ProxTest" />
+      <module name="设计模式" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.test.proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProxTest" />
         <item itemvalue="Application.Client (2)" />
         <item itemvalue="Application.LazySingletonThreadSafe" />
         <item itemvalue="Application.LazySingleton" />
         <item itemvalue="Application.Client (3)" />
-        <item itemvalue="Application.Client (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -446,16 +441,18 @@
       <workItem from="1569074623509" duration="4451000" />
       <workItem from="1569660781963" duration="2524000" />
       <workItem from="1570075605752" duration="1984000" />
+      <workItem from="1587046702713" duration="3128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24598000" />
+    <option name="totallyTimeSpent" value="27726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2160229" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21888413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -463,7 +460,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286908" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.32729805" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39972144" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -494,16 +491,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/simpleFactory/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/proxy/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -569,20 +556,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -686,6 +659,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="40" column="5" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Decorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Singleton/EagerSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/io/FilterInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -735,75 +773,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingletonThreadSafe.java">
+    <entry file="file://$PROJECT_DIR$/src/proxy/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="330">
+          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Singleton/EagerSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Singleton/LazySingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="5" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/Decorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/decoratorTest/ConcreteDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -812,6 +787,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="483" column="18" selection-start-line="483" selection-start-column="18" selection-end-line="483" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/proxy/ProxTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="16" selection-start-line="16" selection-end-line="67" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
