@@ -427,7 +427,7 @@ public class MybeanPostProcesser implements BeanPostProcessor {
 
   - 按照名称注入1
 
-    @Autowired
+    @Autowired(如果查询的结果不止一个，那么@Autowired会根据名称来查找。)
 
     @Quaifier("名称")
 
