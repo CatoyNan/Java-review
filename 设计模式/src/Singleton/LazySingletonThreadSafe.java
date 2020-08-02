@@ -28,6 +28,7 @@ public class LazySingletonThreadSafe {
         return lazySingletonThreadSafe;
     }
 
+
     public static void main(String[] args) {
         Executor exec = Executors.newFixedThreadPool(10);
         exec.execute(()->{
