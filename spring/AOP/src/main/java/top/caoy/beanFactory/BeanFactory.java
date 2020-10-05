@@ -31,6 +31,8 @@ import java.lang.reflect.Proxy;
                     //Object result = method.invoke(userService,args);
                     //执行后方法
                     myAspect.after();
+                } else {
+                    result = method.invoke(userService, args);
                 }
                 return result;
             }

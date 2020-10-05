@@ -1,4 +1,4 @@
-一、maven 生命周期
+### 一、maven 生命周期
 
 ​	Maven拥有三套相互独立的生命周期，它们分别为clean、default和site。clean生命周期的目的是清理项目，default生命周期的目的是构建项目，而site生命周期是建立项目站点。
 
@@ -19,7 +19,7 @@ graph TB
 
 
 
-![image-20191006195811171](/Users/admin/Desktop/document/学习/Java-review/maven/assets/image-20191006195811171.png)
+![image-20191006195811171](./assets/image-20191006195811171.png)
 
 | 阶段          | 处理     | 描述                                                     |
 | :------------ | :------- | :------------------------------------------------------- |

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 80
 
 spring:
   application:
@@ -10,10 +10,6 @@ spring:
     url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEndcoding=utf-8&useSSL=false&serverTimezone=UTC
     username: mysql
     password: password
-  eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://localhost:8761/eureka/
 
 mybatis:
   type-aliases-package: top.catoy.springcloud.entities

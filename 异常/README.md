@@ -2,7 +2,7 @@
 
 
 
-![image-20191112110846869](/Users/admin/Desktop/document/学习/Java-review/异常/assets/image-20191112110846869.png)
+![image-20191112110846869](./assets/image-20191112110846869.png)
 
 
 

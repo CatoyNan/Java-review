@@ -11,14 +11,23 @@ import top.caoy.service.UserService;
 @Service("UserService")
 public class UserServiceImpl implements UserService {
     public void addUser() {
-        System.out.println("addUser");
+        System.out.println("@addUser");
     }
 
     public void delUser() {
-        System.out.println("delUser");
+        System.out.println("@delUser");
     }
 
     public void updateUser() {
-        System.out.println("updateUser");
+        System.out.println("@updateUser");
+    }
+
+    public void throwError() {
+        System.out.println("@throwError");
+        int a = 1/0;
+    }
+
+    public String returnString() {
+        return "hello world";
     }
 }
