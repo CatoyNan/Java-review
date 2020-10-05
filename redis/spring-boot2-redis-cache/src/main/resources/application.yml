@@ -1,0 +1,10 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: spring-boot2-redis-cache
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 10
+    timeout: 1s
