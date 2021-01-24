@@ -400,6 +400,8 @@ public class UserServiceImpl implements UserService {
 
 #### 7.2切面
 
+![image-20201207095522247](C:\Users\xjn17\AppData\Roaming\Typora\typora-user-images\image-20201207095522247.png)
+
 ```java
 @Service
 @Aspect
@@ -465,6 +467,89 @@ before
 @addUser
 around-after
 after
-afterReturning
+afterReturning七、spring AOP 注解
 ```
+
+## 八、传递参数给通知
+
+#### 8.1 args
+
+运行时所传入的参数是`A` 接口或是实现`A`接口的类的连接点
+
+```
+args（packageName.A）
+```
+
+区别于 `execution(* *(java.io.Serializable))`： args版本只有在动态运行时候传入参数是Serializable时才匹配，并且包括其子类。而execution版本在方法签名中声明只有一个 `Serializable`类型的参数时候匹配。
+
+例：
+
+- 只匹配`addUser`方法，且参数类型为`top.caoy.pojo.User`
+
+```java
+@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(top.caoy.pojo.User))")
+ public void performance3() {
+ }
+```
+
+- 只匹配`addUser`方法，且参数类型为`top.caoy.pojo.User`或其子类
+
+```java
+@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(..)) && args(top.caoy.pojo.User)))")
+ public void performance3() {
+ }
+```
+
+#### 8.2 使用args传递参数给通知
+
+如果在一个args表达式中应该使用类型名字的地方 使用一个参数名字，那么当通知执行的时候对应的参数值将会被传递进来。用一个例子应该会使它变得清晰。 假使你想要通知以一个Account对象作为第一个参数的DAO操作的执行， 你想要在通知体内也能访问account对象，可以编写如下的代码：
+
+```java
+@Before（"com.xyz.myapp.SystemArchitecture.dataAccessOperation（..） &&" + 
+        "args（account,..）"）
+public void validateAccount（Account account） {
+  // ...
+}
+```
+
+切入点表达式的 `args(account,..)` 部分有两个目的：首先它保证了 只会匹配那些接受至少一个参数的方法的执行，而且传入的参数必须是`Account`类型的实例， 其次它使得在通知体内可以通过`account` 参数访问实际的`Account`对象。
+
+另外一个办法是定义一个切入点，这个切入点在匹配某个连接点的时候“提供”了 `Account`对象的值，然后直接从通知中访问那个命名切入点。看起来和下面的示例一样：
+
+```java
+@Pointcut（"com.xyz.myapp.SystemArchitecture.dataAccessOperation（..） &&" + 
+          "args（account,..）"）
+private void accountDataAccessOperation（Account account） {}
+
+@Before（"accountDataAccessOperation（account）"）
+public void validateAccount（Account account） {
+  // ...
+}
+```
+
+#### 8.3 处理参数
+
+```java
+//切入点
+@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(..)) && args(user)))")
+public void performance(User user) {
+}
+
+//通知方法将目标方法封装起来
+@Around("performance(user)")
+public Object around3(ProceedingJoinPoint joinPoint,User user) throws Throwable {
+     System.out.println(user.getName());
+     Object proceed = joinPoint.proceed();
+     System.out.println(user.getAge());
+     return proceed;
+}
+```
+
+
+
+
+
+
+
+[参考文档]: http://shouce.jb51.net/spring/aop.html#aop-choosing
 

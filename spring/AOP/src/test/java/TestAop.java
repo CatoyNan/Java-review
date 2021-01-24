@@ -1,5 +1,6 @@
 import org.junit.Test;
 import top.caoy.beanFactory.BeanFactory;
+import top.caoy.pojo.User;
 import top.caoy.service.UserService;
 
 /**
@@ -11,7 +12,7 @@ public class TestAop {
     @Test
     public void test(){
         UserService userService = BeanFactory.creatBean();
-        userService.addUser();
+        userService.addUser(new User());
         userService.delUser();
     }
 }

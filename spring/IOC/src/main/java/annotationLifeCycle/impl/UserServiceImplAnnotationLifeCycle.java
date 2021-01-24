@@ -4,6 +4,7 @@ import annotationLifeCycle.UserService;
 import dao.UserDao;
 import dao.impl.UserDaoImpl;
 import entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -16,13 +17,22 @@ import javax.annotation.PreDestroy;
  **/
 @Service
 public class UserServiceImplAnnotationLifeCycle implements UserService {
+
     private UserDao userDao;
 
     public UserServiceImplAnnotationLifeCycle() {
-        this.userDao = new UserDaoImpl();
+        System.out.println("无参构造方法");
     }
 
+    @Autowired
+    public UserServiceImplAnnotationLifeCycle(UserDao userDao) {
+        System.out.println("有参构造方法");
+        this.userDao = userDao;
+    }
+
+    @Autowired
     public void setUserDao(UserDao userDao) {
+        System.out.println("setter");
         this.userDao = userDao;
     }
 

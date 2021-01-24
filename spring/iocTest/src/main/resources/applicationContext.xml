@@ -7,5 +7,10 @@
     <!--<bean>配置需要创建的对象
         id从spring容器中获得实例时使用
         class需要创建实例的权限定类名-->
-    <bean id="userServiceId" class="service.impl.UserServiceImpl"></bean>
+    <bean id="userServiceId" class="service.impl.UserServiceImpl">
+        <property name="myUser" ref="user"></property>
+    </bean>
+
+    <bean id="user" class="entity.User" lazy-init="true"></bean>
+
 </beans>

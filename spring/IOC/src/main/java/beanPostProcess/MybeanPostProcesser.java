@@ -17,22 +17,13 @@ import java.lang.reflect.Proxy;
 public class MybeanPostProcesser implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("前方法");
+        System.out.println(String.format("前方法-beanName:%s",beanName));
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("后方法");
-        //生成代理
-        return Proxy.newProxyInstance(MybeanPostProcesser.class.getClassLoader(),
-                bean.getClass().getInterfaces(),
-                (proxy,method,args) ->{
-                      System.out.println("事物插入1");
-                      //执行目标方法
-                      Object returnvalue = method.invoke(bean,args);
-                      System.out.println("事物插入2");
-                      return returnvalue;
-                });
+        System.out.println(String.format("后方法-beanName:%s",beanName));
+        return bean;
     }
 }

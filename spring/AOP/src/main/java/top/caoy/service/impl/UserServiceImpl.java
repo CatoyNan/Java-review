@@ -1,6 +1,7 @@
 package top.caoy.service.impl;
 
 import org.springframework.stereotype.Service;
+import top.caoy.pojo.User;
 import top.caoy.service.UserService;
 
 /**
@@ -10,7 +11,7 @@ import top.caoy.service.UserService;
  **/
 @Service("UserService")
 public class UserServiceImpl implements UserService {
-    public void addUser() {
+    public void addUser(User user) {
         System.out.println("@addUser");
     }
 
@@ -29,5 +30,10 @@ public class UserServiceImpl implements UserService {
 
     public String returnString() {
         return "hello world";
+    }
+
+    @Override
+    public void twoArgs(String a, int b) {
+        System.out.println(String.format("a=%s,b=%s",a,b));
     }
 }

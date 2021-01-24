@@ -7,6 +7,6 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
     <!--组件扫描，扫描含有组件的类-->
-    <context:component-scan base-package="annotationTest,annotationLifeCycle,annotationLifeCycle.impl,beanPostProcess"></context:component-scan>
+    <context:component-scan base-package="annotationLifeCycle,annotationLifeCycle.impl,beanPostProcess"></context:component-scan>
 
 </beans>

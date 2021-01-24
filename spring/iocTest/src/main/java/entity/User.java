@@ -1,5 +1,8 @@
 package entity;
 
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,7 @@ import java.util.Date;
  * @author: xjn
  * @create: 2019-04-20 15:19
  **/
+@Component
 public class User {
     private String name;
     private Date date;
