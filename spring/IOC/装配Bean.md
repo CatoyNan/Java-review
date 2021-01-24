@@ -493,6 +493,6 @@ public class MybeanPostProcesser implements BeanPostProcessor {
 
 ## 九、bean的初始话过程
 
-![bean生命周期](assets/bean生命周期.svg)
+![bean生命周期](assets/bean生命周期.png)
 
   
