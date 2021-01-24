@@ -493,4 +493,8 @@ public class MybeanPostProcesser implements BeanPostProcessor {
 
 ## 九、bean的初始话过程
 
-![835a339b033b5bb5339981b821d3d539b700bc9d](./assets/835a339b033b5bb5339981b821d3d539b700bc9d.jpg)
+https://drive.google.com/file/d/1ihoYLkhLHadSEj6y0UfN9v2gThM8RKL2/view?usp=sharing
+
+![bean生命周期 (1)](assets/bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%20(1).svg)
+
+<img src="./assets/835a339b033b5bb5339981b821d3d539b700bc9d.jpg" alt="835a339b033b5bb5339981b821d3d539b700bc9d" style="zoom: 200%;" />
