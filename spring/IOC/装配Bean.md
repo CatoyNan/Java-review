@@ -493,6 +493,6 @@ public class MybeanPostProcesser implements BeanPostProcessor {
 
 ## 九、bean的初始话过程
 
-![bean生命周期 (1)](https://raw.githubusercontent.com/CatoyNan/imageCloud/99484f90d3ec088c86e4ca6f9ef40a01b22c7047/bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.svg)
+![bean生命周期 (2)](assets/bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%20(2).svg)
 
 <img src="./assets/835a339b033b5bb5339981b821d3d539b700bc9d.jpg" alt="835a339b033b5bb5339981b821d3d539b700bc9d" style="zoom: 200%;" />
