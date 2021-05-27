@@ -7,7 +7,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import top.caoy.aspect.RetryAspect;
 
 @Configuration
-@EnableAspectJAutoProxy
 @ComponentScan(value = "top.caoy")
 public class SpringConfig {
     @Bean

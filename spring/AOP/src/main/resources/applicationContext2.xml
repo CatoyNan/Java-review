@@ -31,4 +31,6 @@
         <aop:pointcut id="myPointcut" expression="execution(* top.caoy.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="mySpringAspect" pointcut-ref="myPointcut"/>
     </aop:config>
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy proxy-target-class="false" expose-proxy="false"/>
 </beans>

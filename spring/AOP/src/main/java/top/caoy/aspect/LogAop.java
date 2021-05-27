@@ -1,7 +1,9 @@
 package top.caoy.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import top.caoy.pojo.User;
@@ -65,9 +67,9 @@ public class LogAop {
     //通知方法将目标方法封装起来
     @Around("performance3(d)")
     public Object around3(ProceedingJoinPoint joinPoint, int d) throws Throwable {
-         Object proceed = joinPoint.proceed();
-         System.out.println(d);
-         return proceed;
+        Object proceed = joinPoint.proceed();
+        System.out.println(d);
+        return proceed;
     }
 
 //    //通知方法会在目标方法返回或抛出异常后调用

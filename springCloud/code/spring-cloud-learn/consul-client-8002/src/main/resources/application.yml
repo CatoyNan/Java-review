@@ -1,0 +1,17 @@
+server:
+  port: 8002
+
+spring:
+  spring:
+    application:
+      name: consul-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.spring.application.name}:${server.port}
+        service-name: ${spring.spring.application.name}
+        heartbeat:
+          enabled: true
+        prefer-ip-address: true

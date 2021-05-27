@@ -8,7 +8,7 @@
     <context:component-scan base-package="top.caoy"></context:component-scan>
 
     <!--目标类-->
-    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+    <bean id="ReadService" class="top.caoy.service.impl.ReadServiceImpl"></bean>
 
     <!--切面类-->
     <bean id="MySpringAspectId" class="top.caoy.aspect.MySpringAspect"></bean>
@@ -24,10 +24,10 @@
     <bean id="ProxyUserServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="interfaces">
             <array>
-                <value>top.caoy.service.UserService</value>
+                <value>top.caoy.service.ReadService</value>
             </array>
         </property>
-        <property name="target" ref="UserServiceId"></property>
+        <property name="target" ref="ReadService"></property>
         <property name="interceptorNames" value="MySpringAspectId"></property>
     </bean>
 </beans>

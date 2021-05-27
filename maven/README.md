@@ -78,10 +78,16 @@ mvn install -Dmaven.test.skip=true
 #### 1.依赖的范围
 
 - compile
+
 - test
+
 - provided
+
 - runtime
+
 - system
+
+  ![image-20210211124415750](assets/image-20210211124415750.png)
 
 
 

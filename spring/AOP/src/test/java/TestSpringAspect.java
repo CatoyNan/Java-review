@@ -1,7 +1,9 @@
 import org.junit.Test;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import top.caoy.aspect.MySpringAspect;
+import top.caoy.service.ReadService;
 import top.caoy.service.UserService;
 
 /**
@@ -14,7 +16,18 @@ public class TestSpringAspect {
     public void testSpringAspect(){
         String path = "applicationContext.xml";
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
-        UserService userService =(UserService) applicationContext.getBean("ProxyUserServiceId");
-        userService.delUser();
+        ReadService readService =(ReadService) applicationContext.getBean("ProxyUserServiceId");
+        readService.readData();
+        if (AopUtils.isAopProxy(readService)) {
+            System.out.println("isAopProxy");
+        }
+
+        if (AopUtils.isCglibProxy(readService)) {
+            System.out.println("isCglibProxy");
+        }
+
+        if (AopUtils.isJdkDynamicProxy(readService)) {
+            System.out.println("isJdkDynamicProxy");
+        }
     }
 }

@@ -491,6 +491,10 @@ public class MybeanPostProcesser implements BeanPostProcessor {
   
     
 
-## 九、bean的初始话过程
+## 九、bean的初始化过程
 
 <iframe frameborder="0" style="width:100%;height:613px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23HCatoyNan%252FimageCloud%252Fmaster%252Fbean%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F.svg&layers=1&nav=1&title=bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.svg#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FCatoyNan%2FimageCloud%2Fmaster%2Fbean%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F.svg"></iframe>
+
+从图中可以看出spring的生命周期分为这几个阶段
+
+实例化 -》 依赖注入 -》初始化 -》销毁
