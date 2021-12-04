@@ -55,9 +55,14 @@ revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权�
   
   ```
 
-  
 
-## 四、EXPLAIN 
+
+
+## 四、配置管理
+
+
+
+## 五、EXPLAIN 
 
 EXPLAIN :模拟Mysql优化器是如何执行SQL查询语句的，从而知道Mysql是如何处理你的SQL语句的。分析你的查询语句或是表结构的性能瓶颈。
 
@@ -187,7 +192,7 @@ mysql> explain select order_number from tb_order group by order_number;
 
 
 
-## 五、锁
+## 六、锁
 
 #### 1.锁的分类
 
@@ -245,19 +250,54 @@ commit; -- 提交事务锁释放
    - session1可以正常增删改查表A。
    - session2不能增删改表A。**若字段没有索引行锁变表锁。**
 
-## 六、事务
+## 七、事务
 
-### 6.1 事务的隔离级别
+### 7.1 事务的隔离级别
 
 - 读未提交是指，一个事务还没提交时，它做的变更就能被别的事务看到。
 - 读提交是指，一个事务提交之后，它做的变更才会被其他事务看到。
 - 可重复读是指，一个事务执行过程中看到的数据，总是跟这个事务在启动时看到的数据是一致的。当然在可重复读隔离级别下，未提交变更对其他事务也是不可见的。
 - 串行化，顾名思义是对于同一行记录，“写”会加“写锁”，“读”会加“读锁”。当出现读写锁冲突的时候，后访问的事务必须等前一个事务执行完成，才能继续执行。
 
-### 6.3 事务的实现
+### 7.2 事务的实现
 
 
 
 
 
-## 七、索引
+## 八、索引
+
+
+
+## 九、日志
+
+MySQL中有六种日志文件，分别是：**重做日志（redo log）、回滚日志（undo log）、二进制日志（binlog）、错误日志（errorlog）、慢查询日志（slow query log）、查询日志（general log），中继日志（relay log）**
+
+https://www.easyblog.top/article/details/206
+
+### 9.1 binlog
+
+- binlog 是 MySQL 的 Server 层实现的，所有引擎都可以使用。
+- binlog 是逻辑日志，记录的是这个语句的原始逻辑，比如“给 ID=2 这一行的 c 字段加 1 ”。
+- binlog 是可以追加写入的。“追加写”是指 binlog 文件写到一定大小后会切换到下一个，并不会覆盖以前的日志。
+
+- 查看binlog:`mysqlbinlog -vv --base64-output=decode-rows binlog.000018`
+
+  https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html#option_mysqlbinlog_base64-output
+
+- 用于数据库复制，丢失数据恢复
+
+### 9.2 redo log
+
+- redo log 是 InnoDB 引擎特有的
+- redo log 是物理日志，记录的是“在某个数据页上做了什么修改”
+- redo log 是循环写的，空间固定会用完
+- 可以保证 MySQL 异常重启之后数据不丢失
+
+### 9.3 undo log
+
+### 9.4 slow query log
+
+## 十、sql执行流程
+
+![在这里插入图片描述](assets/20210113222656788.png)
