@@ -6,65 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="swiper.min.css">
-        <script src="swiper.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <title>Java-review</title>
     </head>
     <body>
         <div class="swiper-container">
             <div class="swiper-wrapper"></div>
         </div>
+        <h1>Hello World</h1>
     </body>
-    <script>
-        $(function () {
-            var listData = [];
-            $.ajax({
-                async: false,
-                type: "GET",
-                url: "http://localhost:8080/hello",
-                // data: "{\"data\":{},\"heads\":{},\"url\":\"http://github.com/CatoyNan/Java-review\"}",
-                timeout: 3000,
-                contentType: "text/html",
-                Origin: "https://github.com/CatoyNan/Java-review",
-                headers: {},
-                beforeSend() {},
-                success: function (data) {
-                    listData = data.data;
-                    $(listData).each(function (i) {
-                        $(".swiper-wrapper").append($(
-                            "<div class='swiper-slide'><div class='card'><div class='sliderText'><h3>" +
-                            this + "</h3></div><div class='content'><p>asdfasdfasdfasdfdfj dsjf ;asdjf jd a" +
-                            "sdfasdf asdf asdfd f dfsdf sdfsdfsdfasdfasdf</p><a href='#'>read more</a></div" +
-                            "></div></div>"
-                        ));
-                    });  
-                }
-            });
-            $(".swiper-slide:nth-child(5n-4) .sliderText").addClass("blue");
-                    $(".swiper-slide:nth-child(5n-3) .sliderText").addClass("red");
-                    $(".swiper-slide:nth-child(5n-2) .sliderText").addClass("yellow");
-                    $(".swiper-slide:nth-child(5n-1) .sliderText").addClass("oriage");
-                    $(".swiper-slide:nth-child(5n) .sliderText").addClass("purple");
-            var swiper = new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                coverflowEffect: {
-                    rotate: 30,
-                    stretch: 0,
-                    depth: 500,
-                    modifier: 1,
-                    slideShadows: true
-                },
-                pagination: {
-                    el: '.swiper-pagination'
-                }
-            });
-
-        })
-    </script>
-
 </html>
