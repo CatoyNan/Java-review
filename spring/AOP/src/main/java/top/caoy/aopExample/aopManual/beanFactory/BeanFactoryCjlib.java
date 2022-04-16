@@ -4,7 +4,7 @@ import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 import top.caoy.aopExample.aopManual.aspect.MyAspect;
-import top.caoy.aopExample.aopTarget.serviceCjlib.UserServiceImpl;
+import top.caoy.aopExample.aopTarget.serviceCjlib.CjlibUserServiceImpl;
 
 import java.lang.reflect.Method;
 
@@ -14,16 +14,16 @@ import java.lang.reflect.Method;
  * @create: 2019-04-30 18:36
  **/
 public class BeanFactoryCjlib {
-    public static UserServiceImpl creatBean(){
+    public static CjlibUserServiceImpl creatBean(){
        //目标类
-        final UserServiceImpl userService = new UserServiceImpl();
+        final CjlibUserServiceImpl userService = new CjlibUserServiceImpl();
         //切面类
         final MyAspect myAspect = new MyAspect();
         //代理类,底层:创建目标类的子类
         //核心类
         Enhancer enhancer = new Enhancer();
         //确定父类
-        enhancer.setSuperclass(UserServiceImpl.class);
+        enhancer.setSuperclass(CjlibUserServiceImpl.class);
         //设置回调函数,MethodInterceptorde等同于InvocationHandler
         //intercept前三个参数和jdk invoke一样
         enhancer.setCallback(new MethodInterceptor(){
@@ -42,7 +42,7 @@ public class BeanFactoryCjlib {
             }
         });
         //创建代理类
-        UserServiceImpl userService1 =(UserServiceImpl) enhancer.create();
+        CjlibUserServiceImpl userService1 =(CjlibUserServiceImpl) enhancer.create();
         return userService1;
     }
 }

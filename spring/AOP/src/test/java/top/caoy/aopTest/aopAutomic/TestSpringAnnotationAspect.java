@@ -6,6 +6,7 @@ import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import top.caoy.aopExample.aopTarget.serviceCjlib.CjlibUserServiceImpl;
 import top.caoy.logTest.pojo.User;
 import top.caoy.aopExample.aopTarget.UserService;
 
@@ -19,6 +20,11 @@ import top.caoy.aopExample.aopTarget.UserService;
 public class TestSpringAnnotationAspect {
     @Autowired
     private UserService userService;
+
+    //cjlib target
+    @Autowired
+    private CjlibUserServiceImpl cjlibUserServiceImpl;
+
     @Test
     public void testAddUser() {
         User user = new User();
@@ -36,6 +42,26 @@ public class TestSpringAnnotationAspect {
         if (AopUtils.isJdkDynamicProxy(userService)) {
             System.out.println("isJdkDynamicProxy");
         }
+
+        System.out.println(userService.getClass());
 //        Object o = AopContext.currentProxy();
+    }
+
+    @Test
+    public void testAddUserCjlib() {
+        cjlibUserServiceImpl.addUser();
+        if (AopUtils.isAopProxy(cjlibUserServiceImpl)) {
+            System.out.println("isAopProxy");
+        }
+
+        if (AopUtils.isCglibProxy(cjlibUserServiceImpl)) {
+            System.out.println("isCglibProxy");
+        }
+
+        if (AopUtils.isJdkDynamicProxy(cjlibUserServiceImpl)) {
+            System.out.println("isJdkDynamicProxy");
+        }
+
+        System.out.println(cjlibUserServiceImpl.getClass());
     }
 }

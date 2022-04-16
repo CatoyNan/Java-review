@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * @create: 2019-04-30 12:12
  **/
 @Service
-public class UserServiceImpl{
+public class CjlibUserServiceImpl {
     public void addUser() {
         System.out.println("addUser");
     }

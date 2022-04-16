@@ -8,7 +8,7 @@ import top.caoy.logTest.pojo.User;
 @Configuration
 @Aspect
 @EnableAspectJAutoProxy
-public class LogAop {
+public class MyAspect {
 
     //切入点
     @Pointcut("within(top.caoy.aopExample.aopTarget.impl.UserServiceImpl)")
@@ -25,20 +25,25 @@ public class LogAop {
     public void performance3(int d) {
     }
 
+    //切入点
+    @Pointcut("within(top.caoy.aopExample.aopTarget.serviceCjlib.CjlibUserServiceImpl)")
+    public void performance4() {
+    }
+
     //通知方法会在目标方法执行之前执行
-    @Before("performance1()")
+    @Before("performance4()")
     public void before() {
         System.out.println("before");
     }
 
     //通常方法会在目标方法返回后调用
-    @AfterReturning("performance1()")
+    @AfterReturning("performance4()")
     public void afterReturning() {
         System.out.println("afterReturning");
     }
 
     //不论一个方法是如何结束的，最终通知都会运行,相当于finally
-    @After("performance1()")
+    @After("performance4()")
     public void after() {
         System.out.println("after");
     }
