@@ -2,4 +2,5 @@ target
 out
 **/.idea
 **/target
+**/.idea/*
 
