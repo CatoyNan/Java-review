@@ -3,5 +3,5 @@ out
 **/.idea
 **/target
 **/.idea/*
-**/.iml
+**/*.iml
 
