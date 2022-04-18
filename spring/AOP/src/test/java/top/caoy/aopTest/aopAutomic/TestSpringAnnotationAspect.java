@@ -48,6 +48,42 @@ public class TestSpringAnnotationAspect {
     }
 
     @Test
+    public void testReturnString() {
+        userService.returnString();
+        if (AopUtils.isAopProxy(userService)) {
+            System.out.println("isAopProxy");
+        }
+
+        if (AopUtils.isCglibProxy(userService)) {
+            System.out.println("isCglibProxy");
+        }
+
+        if (AopUtils.isJdkDynamicProxy(userService)) {
+            System.out.println("isJdkDynamicProxy");
+        }
+
+        System.out.println(userService.getClass());
+    }
+
+    @Test
+    public void testThrowError() {
+        userService.throwError();
+        if (AopUtils.isAopProxy(userService)) {
+            System.out.println("isAopProxy");
+        }
+
+        if (AopUtils.isCglibProxy(userService)) {
+            System.out.println("isCglibProxy");
+        }
+
+        if (AopUtils.isJdkDynamicProxy(userService)) {
+            System.out.println("isJdkDynamicProxy");
+        }
+
+        System.out.println(userService.getClass());
+    }
+
+    @Test
     public void testAddUserCjlib() {
         cjlibUserServiceImpl.addUser();
         if (AopUtils.isAopProxy(cjlibUserServiceImpl)) {

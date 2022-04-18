@@ -350,7 +350,8 @@ public void testSpringAspect(){
             pointcut-ref:切入点的引用-->
     <!--切入点表达式
 	execution( *             top.caoy.aopExample.aopTarget.impl.*.       *          (..))-->
-  <!--选择方法  返回值任意表  包                     类名任意 方法名任意  参数任意       -->
+  <!--excution  (访问权限符号没有限制就不加 返回值类型  方法全限定类名(参数表))  -->
+	<!--*代表一个或多个，-->
 <aop:config proxy-target-class="true">
   <aop:pointcut id="myPointcut" expression="execution(* top.caoy.aopExample.aopTarget.impl.*.*(..))"/>
   <aop:advisor advice-ref="mySpringAspect" pointcut-ref="myPointcut"/>
@@ -471,6 +472,57 @@ after
 afterReturning七、spring AOP 注解
 ```
 
+#### 7.4切点表达式写法
+
+- 固定格式
+
+```java
+excution(访问权限符号没有限制就不加(todo: spring5可能有区别待验证) 返回值类型  方法全限定方法名(参数表))    
+```
+
+- 通配符
+
+  - *
+
+    1. 匹配一个或多个字符
+
+       ```java
+       excution(public int top.catoy.myMethod*(int,int))//myMethod开头
+       excution(public int top.catoy.myMethod*end(int,int))//myMethod开头end结尾
+       ```
+
+    2. 匹配任意一个方法参数
+
+       ```java
+       excution(public int top.catoy.myMethod(int,*))//匹配第一个参数为int，第二个参数任意（匹配两个参数）
+       ```
+
+    3. *在路径里只能匹配一层路径
+
+       ```java
+       excution(public int top.catoy.*.myMethod(int,int))//匹配top.catoy.xxx.myMethod
+       ```
+
+       
+
+  - ..
+
+    1. 匹配任意多个方法参数，任意类型方法参数
+
+       ```java
+       excution(public int top.catoy.myMethod(..))//不管带什么参数都能匹配
+       ```
+
+    2. 匹配任意多层路径
+
+       ```java
+       excution(public int top.catoy..myMethod(int,int))//匹配top.catoy.xxx.(任意多层).myMethod
+       ```
+
+       
+
+
+
 ## 八、传递参数给通知
 
 #### 8.1 args
@@ -545,6 +597,80 @@ public Object around3(ProceedingJoinPoint joinPoint,User user) throws Throwable 
      return proceed;
 }
 ```
+
+#### 8.4 环绕通知获取方法信息
+
+```java
+//切入点
+@Pointcut("within(top.caoy.aopExample.aopTarget.impl.UserServiceImpl)")
+	public void performance1() {
+}
+
+//通知方法将目标方法封装起来
+@Around("performance1()")
+public Object around1(ProceedingJoinPoint joinPoint) throws Throwable {
+    Object proceed = null;
+    try {
+        System.out.println("around-before");
+        proceed = joinPoint.proceed();
+        System.out.println("around-afterReturning:" + proceed);
+    } catch (Throwable throwable) {
+        System.out.println("around-afterThrowing:" + throwable.getMessage());
+        throw throwable;
+    } finally {
+        System.out.println("around-After");
+    }
+    return proceed;
+}
+```
+
+#### 8.5 AfterReturing通知获取方法信息
+
+```java
+//切入点
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.returnString())")
+  public void performance5() {
+}
+
+//AfterReturning通知获取方法的返回值
+@AfterReturning(value = "performance5()", returning = "result")
+public void afterReturning(JoinPoint joinPoint, Object result) {
+    System.out.println("afterReturning");
+
+    Signature signature = joinPoint.getSignature();
+    System.out.println("methodName:" + signature.getName());
+
+    System.out.println("result:" + result);
+
+    Object[] args = joinPoint.getArgs();
+    System.out.println("args" + Arrays.toString(args));
+}
+```
+
+8.6 AfterThrowing通知获取方法信息
+
+```java
+//切入点
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.throwError())")
+   public void performance6() {
+}
+
+//AfterThrowing通知获取方法的返回值
+@AfterThrowing(value = "performance6()", throwing = "error")
+public void afterThrowing(JoinPoint joinPoint, Throwable error) {
+    System.out.println("afterThrowing");
+
+    Signature signature = joinPoint.getSignature();
+    System.out.println("methodName:" + signature.getName());
+
+    System.out.println("error:" + error.getMessage());
+
+    Object[] args = joinPoint.getArgs();
+    System.out.println("args" + Arrays.toString(args));
+}
+```
+
+
 
 
 
