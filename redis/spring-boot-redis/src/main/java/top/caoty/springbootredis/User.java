@@ -1,4 +1,4 @@
-package com.zh.springbootredis;
+package top.caoty.springbootredis;
 
 import lombok.Data;
 

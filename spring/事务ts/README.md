@@ -1,5 +1,73 @@
 # 事务-TS
 
+一、
+
+	- 声明式事务
+	- 编程式事务
+
+spring 已经为我们写好了切面（事务管理器）`PlatformTransactionManager`
+
+![image-20220420215053512](assets/image-20220420215053512.png)
+
+`JdbcTemplate`和`Mybatis`使用`DataSourceTransactionManager`
+
+
+
+### 二、配置事务
+
+#### 2.1 xml和注解配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:component-scan base-package="top.catoy"></context:component-scan>
+
+    <!--  配置数据源  -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ts?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8"></property>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+    </bean>
+
+    <!--  配置jdbcTemplate  -->
+    <bean class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--  事务控制  -->
+    <!--  1、配置事务管理器（一个写好的切面）  -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--  指定数据源  -->
+        <property name="dataSource" ref="dataSource">
+        </property>
+    </bean>
+
+    <!--  2、开启基于注解的事务控制模式  -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!--  3、给事务方法加注解  -->
+
+
+```
+
+2.2纯注解配置
+
+
+
+### 三、事务的细节
+
+#### 3.1
+
+
+
+
+
 ### 一、注解基本属性
 
 ```java
@@ -92,13 +160,16 @@ String[] noRollbackForClassName() default {};//哪些异常事务可以不回滚
 
 > required
 
-
+- 已经有事务，共用事务，若没有事务则创建新的事务
+- 事务的属性都继承于大事务                                         
+- 底层：将之前事务用的connection专递过来
 
 > requiredNew
 
+- 创建新的事务
+- 底层：重新创建一个connection
 
-
-
+​      
 
 官方翻译文档https://blog.csdn.net/hbtj_1216/article/details/86666359
 
