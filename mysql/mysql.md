@@ -344,10 +344,10 @@ https://www.easyblog.top/article/details/206
 
 ​	mysql有两种方式生成有序的结果：通过排序操作；按索引顺序扫描；如果EXPLAIN出来的type列的值为“index”,则说明mysql使用了索引扫描来做排序。
 
-​	扫描索引本身是很快的，因为只需要从一条索引记录移动到紧接着的下一条记录。但如果索引不能覆盖查询所需的全部列，那就不得不每扫描一条索引记录就回表查询一次对应的行。因此按索引顺序读取数据的速度通常要比顺序地全表扫描慢。使用同一个索引既满足排序，有用于查找行，这样是最好的。
+​	扫描索引本身是很快的，因为只需要从一条索引记录移动到紧接着的下一条记录。但如果索引不能覆盖查询所需的全部列，那就不得不每扫描一条索引记录就回表查询一次对应的行。因此按索引顺序读取数据的速度通常要比顺序地全表扫描慢。使用同一个索引既满足排序，又用于查找行，这样是最好的。
 
 ```sql
--- 按索引顺序读取数据,优化器优化成全表扫描,12.5sec
+-- 按索引顺序读取数据,因为需要回表很多次，优化器优化成全表扫描,12.5sec
 explain select * from app_user order by name; 
 *************************** 1. row ***************************
            id: 1
@@ -362,6 +362,22 @@ possible_keys: NULL
          rows: 2906390
      filtered: 100.00
         Extra: Using filesort
+
+-- 按索引顺序读取数据,使用了limit,回表数量较少，没有优化成全表扫描,
+explain select * from app_user order by name limit 0,10;
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: index
+possible_keys: NULL
+          key: idx_app_user_name
+      key_len: 153
+          ref: NULL
+         rows: 10
+     filtered: 100.00
+        Extra: NULL
         
 -- 按索引顺序读取数据,强制使用索引,22.5sec
 explain select * from app_user force INDEX(idx_app_user_name) order by name; 
@@ -411,4 +427,26 @@ possible_keys: NULL
      filtered: 100.00
         Extra: NULL
 ```
+
+优化建议：
+
+- 尽量使用index完成排序如果where后和order by 之后是相同的列则使用单列索引，如果不同就是联合索引。
+
+- 如果不能用index,需要对filesort方式进行调优。
+
+  
+
+最佳实践：
+
+```sql
+-- 使用到了（key1,key2）的联合索引，用到了index排序，select key1用到了索引覆盖
+select key1 from t where key = 1 order by key2;
+
+-- 使用到了（key1,key2）的联合索引，用到了index排序，select * 就用limit限制回表次数
+select * from t where key = 1 order by key2 limit 0,10;
+```
+
+
+
+
 

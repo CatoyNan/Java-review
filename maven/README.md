@@ -62,6 +62,7 @@ mvn install -Dmaven.test.skip=true
 	<version>${spring-boot.version}</version>
 		<executions>
 			<execution>
+                <id>任务id</id>
 				<goals>
 					<goal>目标</goal>
 				</goals>
@@ -819,4 +820,102 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0http://maven.apache.org/mav
   </dependencies>  
  </dependencyManagement>  
 ```
+
+
+
+### 七、常用插件
+
+#### 1.maven-assembly-plugin
+
+https://maven.apache.org/plugins/maven-assembly-plugin/usage.html
+
+​		它能够帮你把你这个工程所关联的任何你需要的内容以及本身全部打包到一个集合里面去，然后作为发行版，就能直接使用了。
+你有一堆文件，要搞到一个集合里面去，那就用这个插件就行了。
+
+> 使用自带的预配置描述 descriptorRef
+
+```xml
+<!-- jar-with-dependencies 打包成含有依赖的jar -->
+<!-- bin  -->
+<!-- src 打包src下的源码 -->
+<!-- project 打包整个项目 -->
+<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>3.4.2</version>
+    <configuration>
+        <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-assembly</id> <!-- this is used for inheritance merges -->
+            <phase>package</phase> <!-- bind to the packaging phase -->
+            <goals>
+              <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+> 自定义配置
+
+```xml
+<!-- pom.xml -->
+<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>3.4.2</version>
+    <configuration>
+        <formats>
+            <!-- 打包格式 -->
+            <format>
+                dir
+            </format>
+        </formats>
+        <appendAssemblyId>false</appendAssemblyId>
+        <descriptors>
+            <!-- 配置文件路径 -->
+            <descriptor>${descriptor.file}</descriptor>
+        </descriptors>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
+<!-- assembly.xml -->
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>online</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>./deploy</directory>
+            <outputDirectory>./</outputDirectory>
+            <includes>
+                <include>deploy.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../start/target</directory>
+            <outputDirectory>./</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
+```
+
+configuration配置：https://maven.apache.org/plugins/maven-assembly-plugin/single-mojo.html
+
+自定义配置文件配置：https://maven.apache.org/plugins/maven-assembly-plugin/assembly.html
 
