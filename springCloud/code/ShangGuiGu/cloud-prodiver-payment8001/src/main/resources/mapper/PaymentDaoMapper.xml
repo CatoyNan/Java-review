@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.catoy.springcloud.dao.PaymentDaoMapper">
+    <resultMap id="baseResultMap" type="top.catoy.springcloud.entities.Payment">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="serial" property="serial" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO payment(serial)
+        VALUE (#{serial})
+    </insert>
+    
+    <select id="getPaymentByid" resultType="top.catoy.springcloud.entities.Payment">
+        SELECT * FROM payment
+        WHERE id = #{id}
+    </select>
+</mapper>

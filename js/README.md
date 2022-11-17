@@ -22,18 +22,33 @@ let hello = async () => { return "Hello" };
 
 ### 1.2 await
 
-它可以放在任何异步的，基于 promise 的函数之前。它会暂停代码在该行上，直到 promise 完成，然后返回结果值。相当于自动帮我们调用了promise.then(),把promise的执行结果返回
+它可以放在任何异步的，基于 promise 的函数之前。它会暂停代码在该行上，直到 promise 完成，然后返回结果值。相当于自动帮我们调用了promise.then(),把promise的执行结果返回，await只能出现在async函数中
 
 #### 使用方式
 
 ```javascript
-function takeLongTime() {
-    return new Promise(resolve => {
+// 右侧为Promise 状态为成功
+async function takeLongTime() {
+    let p = new Promise(resolve => {
         setTimeout(() => resolve("long_time_value"), 1000);
     });
+    
+    const v = await p; 
+    console.log(v)
 }
+takeLongTime();//long_time_value
 
-const v = await takeLongTime();// 相当于takeLongTime().then();
-//区别： await直接返回了值，.then()返回了promise	
+// 右侧为Promise 状态为失败
+async function takeLongTime() {
+    let p = new Promise((resolve, reject) => {
+        setTimeout(() => reject("long_time_value"), 1000);
+    });
+    
+    const v = await p; 
+    console.log(v)
+}
+takeLongTime();//long_time_value
+
+
 ```
 

@@ -1,7 +1,7 @@
 target
 out
-.idea/*
-test
-.idea
-.idea/**
-.idea/*/
+**/.idea
+**/target
+**/.idea/*
+**/*.iml
+

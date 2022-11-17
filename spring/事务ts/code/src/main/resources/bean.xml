@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:component-scan base-package="top.catoy"></context:component-scan>
+
+    <!--  配置数据源  -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ts?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8"></property>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+    </bean>
+
+    <!--  配置jdbcTemplate  -->
+    <bean class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--  事务控制  -->
+    <!--  1、配置事务管理器（一个写好的切面）  -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--  指定数据源  -->
+        <property name="dataSource" ref="dataSource">
+        </property>
+    </bean>
+
+    <!--  2、开启基于注解的事务控制模式  -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!--  3、给事务方法加注解  -->
+
+</beans>

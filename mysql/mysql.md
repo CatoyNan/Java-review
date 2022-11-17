@@ -55,9 +55,14 @@ revoke all on *.* from 'catoy'@'%';//撤销catoy对所有数据库的所有权�
   
   ```
 
-  
 
-## 四、EXPLAIN 
+
+
+## 四、配置管理
+
+
+
+## 五、EXPLAIN 
 
 EXPLAIN :模拟Mysql优化器是如何执行SQL查询语句的，从而知道Mysql是如何处理你的SQL语句的。分析你的查询语句或是表结构的性能瓶颈。
 
@@ -183,18 +188,28 @@ mysql> explain select order_number from tb_order group by order_number;
 8、distinct：
 ```
 
+１）.对于全表扫描
+为实现全表扫描，Oracle 读取表中所有的行，并检查每一行是否满足语句的 WHERE 限制条件一个多块读操作可以使一次 I/O 能读取多块数据块 (db_block_multiblock_read_count 参数设定)，而不是只读取一个数据块，这极大的减少了 I/O 总次数，提高了系统的吞吐量，所以利用多块读的方法可以十分高效地实现全表扫描，而且只有在全表扫描的情况下才能使用多块读操作。在这种访问模式下，每个数据块只被读一次。
+
+使用 FTS 的前提条件：在较大的表上不建议使用全表扫描，除非取出数据的比较多，超过总量的 5% -- 10%，或你想使用并行查询功能时。
+
+２）.索引扫描 (Index Scan 或 index lookup)
+我们先通过 index 查找到数据对应的 rowid 值 (对于非唯一索引可能返回多个 rowid 值)，然后根据 rowid 直接从表中得到具体的数据，这种查找方式称为索引扫描或索引查找 (index lookup)。一个 rowid 唯一的表示一行数据，该行对应的数据块是通过一次 i/o 得到的，在此情况下该次 i/o 只会读取一个数据库块。
+
+在索引中，除了存储每个索引的值外，索引还存储具有此值的行对应的 ROWID 值。索引扫描可以由 2 步组成：(1) 扫描索引得到对应的 rowid 值。 (2) 通过找到的 rowid 从表中读出具体的数据。每步都是单独的一次 I/O，但是对于索引，由于经常使用，绝大多数都已经 CACHE 到内存中，所以第 1 步的 I/O 经常是逻辑 I/O，即数据可以从内存中得到。但是对于第 2 步来说，如果表比较大，则其数据不可能全在内存中，所以其 I/O 很有可能是物理 I/O，这是一个机械操作，相对逻辑 I/O 来说，是极其费时间的。所以如果多大表进行索引扫描，取出的数据如果大于总量的 5% -- 10%，使用索引扫描会效率下降很多。
 
 
 
-
-## 五、锁
+## 六、锁
 
 #### 1.锁的分类
 
 1. 从对数据库的操作类型分：读锁（共享锁），写锁（排他锁）
 2. 从对数据库的操作粒度分：表锁，行锁
 
+读锁是共享的，某个连接对某张表加了读锁，另一个连接仍可以对这张表加读锁，不能加写锁。
 
+写锁是排他的，某个连接对某张表加了写锁，另一个连接无法对这张表加读锁或写锁。
 
 #### 2.表锁相关基本语句
 
@@ -241,14 +256,197 @@ commit; -- 提交事务锁释放
    - session1可以正常增删改查表A。
    - session2不能修改id为1的那行数据，等待锁被释放，其他数据任可以增删改查。
 
-2. session1开启事务操作name为‘hello’的那好shuj
+2. session1开启事务操作name为‘hello’的那行数据
    - session1可以正常增删改查表A。
    - session2不能增删改表A。**若字段没有索引行锁变表锁。**
 
-## 六、事务的隔离级别
+## 七、事务
+
+### 7.1 事务的隔离级别
+
+- 读未提交是指，一个事务还没提交时，它做的变更就能被别的事务看到。
+- 读提交是指，一个事务提交之后，它做的变更才会被其他事务看到。
+- 可重复读是指，一个事务执行过程中看到的数据，总是跟这个事务在启动时看到的数据是一致的。当然在可重复读隔离级别下，未提交变更对其他事务也是不可见的。
+- 串行化，顾名思义是对于同一行记录，“写”会加“写锁”，“读”会加“读锁”。当出现读写锁冲突的时候，后访问的事务必须等前一个事务执行完成，才能继续执行。
+
+### 7.2 事务的实现
 
 
 
 
 
-## 七、索引
+## 八、索引
+
+
+
+## 九、日志
+
+MySQL中有六种日志文件，分别是：**重做日志（redo log）、回滚日志（undo log）、二进制日志（binlog）、错误日志（errorlog）、慢查询日志（slow query log）、查询日志（general log），中继日志（relay log）**。
+
+日志先行原则
+
+https://www.easyblog.top/article/details/206
+
+### 9.1 binlog
+
+- binlog 是 MySQL 的 Server 层实现的，所有引擎都可以使用。
+- binlog 是逻辑日志，记录的是这个语句的原始逻辑，比如“给 ID=2 这一行的 c 字段加 1 ”。
+- binlog 是可以追加写入的。“追加写”是指 binlog 文件写到一定大小后会切换到下一个，并不会覆盖以前的日志。
+
+- 查看binlog:`mysqlbinlog -vv --base64-output=decode-rows binlog.000018`
+
+  https://dev.mysql.com/doc/refman/8.0/en/mysqlbinlog.html#option_mysqlbinlog_base64-output
+
+- 用于数据库复制，丢失数据恢复
+
+### 9.2 redo log
+
+- redo log 是 InnoDB 引擎特有的
+- redo log 是物理日志，记录的是“在某个数据页上做了什么修改”
+- redo log 是循环写的，空间固定会用完
+- 可以保证 MySQL 异常重启之后数据不丢失
+
+### 9.3 undo log
+
+- 支持事务的回滚
+
+### 9.4 slow query log
+
+## 十、sql执行流程
+
+![在这里插入图片描述](assets/20210113222656788.png)
+
+### 10.1 inno db引擎执行update ...where... 流程
+
+1. 从磁盘中读取数据页进入buffer pool中
+2. 将改动数据的原值记录到undo log中(ibdata1)
+3. redo log buffer中记录数据改动逻辑
+4. buffer pool 改动指定行的数据
+5. 用户commit,redo log buufer中的日志保留到磁盘中(ib_logfile0,ib_logfile1)
+
+## 十一、JOIN
+
+### 11.1 mysql join 嵌套循环连接算法
+
+- index(有索引)  NLJ: 被驱动表走索引。扫描函数N+M。join优化的目标
+- simple(没索引) NLJ: 被驱动表没有走索引。扫描行数M*N。
+- block(分块) NLJ: mysql高版本对simple NLJ的优化，将小的表先读入到内存的join buffer中。扫描行数M*N。由于内存操作，所以比simple NLJ快一些。
+- 对于inner join优化MySQL会让有索引的做被驱动表，没有索引的做驱动表
+- 驱动表要全表扫，所以说有小表做驱动表是说法
+
+![image-20211205174312833](assets/image-20211205174312833.png)
+
+
+
+## 十二、sql调优
+
+### 12.1 order by
+
+​	mysql有两种方式生成有序的结果：通过排序操作；按索引顺序扫描；如果EXPLAIN出来的type列的值为“index”,则说明mysql使用了索引扫描来做排序。
+
+​	扫描索引本身是很快的，因为只需要从一条索引记录移动到紧接着的下一条记录。但如果索引不能覆盖查询所需的全部列，那就不得不每扫描一条索引记录就回表查询一次对应的行。因此按索引顺序读取数据的速度通常要比顺序地全表扫描慢。使用同一个索引既满足排序，又用于查找行，这样是最好的。
+
+```sql
+-- 按索引顺序读取数据,因为需要回表很多次，优化器优化成全表扫描,12.5sec
+explain select * from app_user order by name; 
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 2906390
+     filtered: 100.00
+        Extra: Using filesort
+
+-- 按索引顺序读取数据,使用了limit,回表数量较少，没有优化成全表扫描,
+explain select * from app_user order by name limit 0,10;
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: index
+possible_keys: NULL
+          key: idx_app_user_name
+      key_len: 153
+          ref: NULL
+         rows: 10
+     filtered: 100.00
+        Extra: NULL
+        
+-- 按索引顺序读取数据,强制使用索引,22.5sec
+explain select * from app_user force INDEX(idx_app_user_name) order by name; 
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: index
+possible_keys: NULL
+          key: idx_app_user_name
+      key_len: 153
+          ref: NULL
+         rows: 2906390
+     filtered: 100.00
+        Extra: NULL
+        
+-- 按索引顺序读取数据,使用覆盖索引不回表,1.0sec
+explain select name from app_user order by name; 
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: index
+possible_keys: NULL
+          key: idx_app_user_name
+      key_len: 153
+          ref: NULL
+         rows: 2906390
+     filtered: 100.00
+        Extra: Using index
+
+-- 全表扫描,7.6sec
+select * from app_user 
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: app_user
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 2906390
+     filtered: 100.00
+        Extra: NULL
+```
+
+优化建议：
+
+- 尽量使用index完成排序如果where后和order by 之后是相同的列则使用单列索引，如果不同就是联合索引。
+
+- 如果不能用index,需要对filesort方式进行调优。
+
+  
+
+最佳实践：
+
+```sql
+-- 使用到了（key1,key2）的联合索引，用到了index排序，select key1用到了索引覆盖
+select key1 from t where key = 1 order by key2;
+
+-- 使用到了（key1,key2）的联合索引，用到了index排序，select * 就用limit限制回表次数
+select * from t where key = 1 order by key2 limit 0,10;
+```
+
+
+
+
+

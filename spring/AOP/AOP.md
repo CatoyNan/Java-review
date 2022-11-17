@@ -27,7 +27,7 @@
 - JoinPoint:连接点，那些可能被拦截的方法
 - PoinCut:切入点，已经被增强的连接点
 - Advice:通知，增强的代码，例如：after,before
-- weaving:织入
+- weaving:织入，把增强advice应用到目标对象target来创建新的代理对象proxy的过程
 - Proxy:代理类
 - Aspect:切面，切入点和通知的结合
 
@@ -87,7 +87,7 @@ public class BeanFactory {
                     //执行前方法
                     myAspect.before();
                     //执行代理类方法
-                    result = method.invoke(userService,args);
+                        result = method.invoke(userService,args);
                     //Object result = method.invoke(userService,args);
                     //执行后方法
                     myAspect.after();
@@ -215,8 +215,8 @@ public void testCjlib(){
 - 核心jar包
 
   - 核心4+1
-  - AOP联盟规范
-  - spring-aop
+  - AOP联盟规范（规范）
+  - spring-aop（实现）
 
   ![1557047380753](http://ww1.sinaimg.cn/large/006tNc79ly1g4zljplprpj30k906kab4.jpg)
 
@@ -269,10 +269,10 @@ public class MySpringAspect implements MethodInterceptor {
 ....
 
     <!--目标类-->
-    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+    <bean id="UserServiceId" class="top.caoy.aopExample.aopTarget.impl.UserServiceImpl"></bean>
 
     <!--切面类-->
-    <bean id="MySpringAspectId" class="top.caoy.aspect.MySpringAspect"></bean>
+    <bean id="MySpringAspectId" class="top.caoy.aopExample.aopSemiautomatic.aspect.MySpringAspect"></bean>
 
     <!--代理类-->
     <!--*使用工厂bean FactoryBean，底层调用getobject（）返回特殊bean-->
@@ -285,7 +285,7 @@ public class MySpringAspect implements MethodInterceptor {
     <bean id="ProxyUserServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="interfaces">
             <array>
-                <value>top.caoy.service.UserService</value>
+                <value>top.caoy.aopExample.aopTarget.UserService</value>
             </array>
         </property>
         <property name="target" ref="UserServiceId"></property>
@@ -336,10 +336,10 @@ public void testSpringAspect(){
 ```xml
 ...
     <!--目标类-->
-    <bean id="UserServiceId" class="top.caoy.service.impl.UserServiceImpl"></bean>
+    <bean id="UserServiceId" class="top.caoy.aopExample.aopTarget.impl.UserServiceImpl"></bean>
 
     <!--切面类-->
-    <bean id="mySpringAspect" class="top.caoy.aspect.MySpringAspect"></bean>
+    <bean id="mySpringAspect" class="top.caoy.aopExample.aopSemiautomatic.aspect.MySpringAspect"></bean>
 
     <!--aop编程-->
     <!--<aop:config>-->
@@ -349,10 +349,11 @@ public void testSpringAspect(){
             advice-ref:通知的引用
             pointcut-ref:切入点的引用-->
     <!--切入点表达式
-	execution( *             top.caoy.service.impl.*.       *          (..))-->
-  <!--选择方法  返回值任意表  包                     类名任意 方法名任意  参数任意       -->
+	execution( *             top.caoy.aopExample.aopTarget.impl.*.       *          (..))-->
+  <!--excution  (访问权限符号没有限制就不加 返回值类型  方法全限定类名(参数表))  -->
+	<!--*代表一个或多个，-->
 <aop:config proxy-target-class="true">
-  <aop:pointcut id="myPointcut" expression="execution(* top.caoy.service.impl.*.*(..))"/>
+  <aop:pointcut id="myPointcut" expression="execution(* top.caoy.aopExample.aopTarget.impl.*.*(..))"/>
   <aop:advisor advice-ref="mySpringAspect" pointcut-ref="myPointcut"/>
 </aop:config>
 ```
@@ -375,7 +376,7 @@ public void testSpringAspect(){
      */
 ```
 
-
+springAop全自动其实就是帮我们写了生成代理对象的工厂，以及工厂中如何获取代理对象。 在bean的后置处理器中获取这个代理对象
 
 ## 七、spring AOP 注解
 
@@ -403,12 +404,13 @@ public class UserServiceImpl implements UserService {
 ![image-20201207095522247](C:\Users\xjn17\AppData\Roaming\Typora\typora-user-images\image-20201207095522247.png)
 
 ```java
-@Service
+@Configuration
 @Aspect
+@EnableAspectJAutoProxy
 public class LogAop {
 
     //切入点
-    @Pointcut("within(top.caoy.service.impl.UserServiceImpl)")
+    @Pointcut("within(top.caoy.aopExample.aopTarget.impl.UserServiceImpl)")
     public void performance() {
     }
 
@@ -470,6 +472,57 @@ after
 afterReturning七、spring AOP 注解
 ```
 
+#### 7.4切点表达式写法
+
+- 固定格式
+
+```java
+excution(访问权限符号没有限制就不加(todo: spring5可能有区别待验证) 返回值类型  方法全限定方法名(参数表))    
+```
+
+- 通配符
+
+  - *
+
+    1. 匹配一个或多个字符
+
+       ```java
+       excution(public int top.catoy.myMethod*(int,int))//myMethod开头
+       excution(public int top.catoy.myMethod*end(int,int))//myMethod开头end结尾
+       ```
+
+    2. 匹配任意一个方法参数
+
+       ```java
+       excution(public int top.catoy.myMethod(int,*))//匹配第一个参数为int，第二个参数任意（匹配两个参数）
+       ```
+
+    3. *在路径里只能匹配一层路径
+
+       ```java
+       excution(public int top.catoy.*.myMethod(int,int))//匹配top.catoy.xxx.myMethod
+       ```
+
+       
+
+  - ..
+
+    1. 匹配任意多个方法参数，任意类型方法参数
+
+       ```java
+       excution(public int top.catoy.myMethod(..))//不管带什么参数都能匹配
+       ```
+
+    2. 匹配任意多层路径
+
+       ```java
+       excution(public int top.catoy..myMethod(int,int))//匹配top.catoy.xxx.(任意多层).myMethod
+       ```
+
+       
+
+
+
 ## 八、传递参数给通知
 
 #### 8.1 args
@@ -484,18 +537,18 @@ args（packageName.A）
 
 例：
 
-- 只匹配`addUser`方法，且参数类型为`top.caoy.pojo.User`
+- 只匹配`addUser`方法，且参数类型为`top.caoy.logTest.pojo.User`
 
 ```java
-@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(top.caoy.pojo.User))")
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.addUser(top.caoy.logTest.pojo.User))")
  public void performance3() {
  }
 ```
 
-- 只匹配`addUser`方法，且参数类型为`top.caoy.pojo.User`或其子类
+- 只匹配`addUser`方法，且参数类型为`top.caoy.logTest.pojo.User`或其子类
 
 ```java
-@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(..)) && args(top.caoy.pojo.User)))")
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.addUser(..)) && args(top.caoy.logTest.pojo.User)))")
  public void performance3() {
  }
 ```
@@ -531,7 +584,7 @@ public void validateAccount（Account account） {
 
 ```java
 //切入点
-@Pointcut("execution(* top.caoy.service.impl.UserServiceImpl.addUser(..)) && args(user)))")
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.addUser(..)) && args(user)))")
 public void performance(User user) {
 }
 
@@ -545,7 +598,103 @@ public Object around3(ProceedingJoinPoint joinPoint,User user) throws Throwable 
 }
 ```
 
+#### 8.4 环绕通知获取方法信息
 
+```java
+//切入点
+@Pointcut("within(top.caoy.aopExample.aopTarget.impl.UserServiceImpl)")
+	public void performance1() {
+}
+
+//通知方法将目标方法封装起来
+@Around("performance1()")
+public Object around1(ProceedingJoinPoint joinPoint) throws Throwable {
+    Object proceed = null;
+    try {
+        System.out.println("around-before");
+        proceed = joinPoint.proceed();
+        System.out.println("around-afterReturning:" + proceed);
+    } catch (Throwable throwable) {
+        System.out.println("around-afterThrowing:" + throwable.getMessage());
+        throw throwable;
+    } finally {
+        System.out.println("around-After");
+    }
+    return proceed;
+}
+```
+
+#### 8.5 AfterReturing通知获取方法信息
+
+```java
+//切入点
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.returnString())")
+  public void performance5() {
+}
+
+//AfterReturning通知获取方法的返回值
+@AfterReturning(value = "performance5()", returning = "result")
+public void afterReturning(JoinPoint joinPoint, Object result) {
+    System.out.println("afterReturning");
+
+    Signature signature = joinPoint.getSignature();
+    System.out.println("methodName:" + signature.getName());
+
+    System.out.println("result:" + result);
+
+    Object[] args = joinPoint.getArgs();
+    System.out.println("args" + Arrays.toString(args));
+}
+```
+
+8.6 AfterThrowing通知获取方法信息
+
+```java
+//切入点
+@Pointcut("execution(* top.caoy.aopExample.aopTarget.impl.UserServiceImpl.throwError())")
+   public void performance6() {
+}
+
+//AfterThrowing通知获取方法的返回值
+@AfterThrowing(value = "performance6()", throwing = "error")
+public void afterThrowing(JoinPoint joinPoint, Throwable error) {
+    System.out.println("afterThrowing");
+
+    Signature signature = joinPoint.getSignature();
+    System.out.println("methodName:" + signature.getName());
+
+    System.out.println("error:" + error.getMessage());
+
+    Object[] args = joinPoint.getArgs();
+    System.out.println("args" + Arrays.toString(args));
+}
+```
+
+
+
+
+
+## 九、执行顺序
+
+#### 9.1不同通知类型的执行顺序
+
+- 正常执行： @Before ===>@After ====>@AfterReturning spring5.0之前， @Before ===>@AfterReturning ====>@After spring5
+
+- 异常执行： @Before ===>@After ====>@AfterThrowing spring5.0之前，  @Before ===>@AfterThrowing ====>@After spring5
+
+  ```java
+  try {
+      @Before
+      method.invoke();
+      @AfterReturning
+  } cath () {
+      @AfterThrowing
+  } finally {
+      @After
+  }
+  ```
+
+  
 
 
 
