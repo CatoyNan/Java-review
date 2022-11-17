@@ -11,7 +11,9 @@ public class Client {
     public static void main(String[] args) {
         FileInputStream file = new FileInputStream();
         BufferedInputStream bf = new BufferedInputStream(file);
-        BufferedInputStream bf1 = new BufferedInputStream(bf);
+        PushBackInputStream bf1 = new PushBackInputStream(bf);
         bf1.option();
+
+
     }
 }
