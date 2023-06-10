@@ -406,3 +406,48 @@ volatile只保证可见性，不保证原子性。当一个变量被volatile修�
 
   设计模式：两阶段终止
 
+
+
+### 五、《JAVA并发编程实战》
+
+1. 并发编程的基础概念
+   - 什么是并发编程 (第1章)
+   - 并发编程的优势和挑战 (第1章)
+   - 并发编程的三个核心概念：原子性、可见性、有序性 (第2章)
+   - 并发编程的常见问题：死锁、饥饿、活锁、竞态条件等 (第10章)
+2. Java并发编程基础
+   - 线程和线程安全 (第3章)
+   - synchronized关键字和锁 (第4章)
+   - volatile关键字 (第5章)
+   - 原子类和Atomic变量 (第6章)
+   - 线程池和Executor框架 (第7章)
+3. Java并发编程高级特性
+   - Lock接口和ReentrantLock类 (第8章)
+   - Condition接口和Condition变量 (第8章)
+   - ReadWriteLock接口和ReentrantReadWriteLock类 (第9章)
+   - Semaphore类和CountDownLatch类 (第11章)
+   - CyclicBarrier类和Exchanger类 (第12章)
+4. 并发数据结构
+   - ConcurrentHashMap类和ConcurrentSkipListMap类 (第13章)
+   - ConcurrentLinkedQueue类和ConcurrentLinkedDeque类 (第14章)
+   - BlockingQueue接口和BlockingDeque接口 (第15章)
+   - TransferQueue接口和SynchronousQueue类 (第16章)
+   - Phaser类和StampedLock类 (第17章)
+5. 并发编程的实践技巧
+   - 线程安全和不可变对象 (第18章)
+   - 线程同步和死锁预防 (第19章)
+   - 并发编程的测试和调试 (第20章)
+   - 并发编程的性能调优 (第21章)
+   - 并发编程的最佳实践 (第22章)
+
+
+
+synchronized关键字和锁的知识点主要涉及以下方面：
+
+1. 介绍synchronized关键字的使用方法和实现原理。
+2. 讨论synchronized关键字和锁的概念和特点，如可重入性、公平性、非公平性等。
+3. 探讨synchronized关键字和锁的应用场景，如保证线程安全、实现互斥访问等。
+4. 讨论synchronized关键字和锁的性能问题，如竞争和消耗等。
+5. 比较synchronized关键字和锁与其他Java并发编程构建模块的区别和联系，如volatile、final、原子变量等。
+6. 使用synchronized关键字和锁协调不同对象之间的操作，实现线程安全的对象组合。
+7. 在线程池中使用synchronized关键字和锁，控制任务执行的顺序和线程池的状态同步。
