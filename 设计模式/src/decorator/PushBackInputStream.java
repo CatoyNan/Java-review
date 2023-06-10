@@ -1,7 +1,7 @@
 package src.decorator;
 
 /**
- * @ClassName PushBackInputStream
+ * @ClassName PushBackBufferedInputStream
  * @Description 过滤流（具体装饰组件）
  * @Author admin
  * @Date 2019-09-09 15:57
