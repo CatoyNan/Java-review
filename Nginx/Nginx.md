@@ -73,6 +73,7 @@ undefined：确实，`proxy_pass` 的行为乍看起来可能显得复杂，但�
    - 如果 `location` 后面跟着是精确匹配（如 = /some_path），那么请求的 URI 将会被 `proxy_pass` 中的 URI 替换。
    - 如果 `location` 后面是正则表达式匹配或普通的前缀匹配，如 `/some_path/`，且 `proxy_pass` 中也指定了 URI (如 `http://backend/other_path/`)，则会进行一对一的替换。
 
+
 以一个例子来说明这个挪用规则：
 
 - 当配置为：
